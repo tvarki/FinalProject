@@ -11,7 +11,7 @@ import Foundation
 
 struct RequestsService{
     
-    var netModel = NetModel()
+    var netService = NetService()
     
     func sendGetReqest<T:Decodable>(
          type: T.Type,
@@ -19,7 +19,7 @@ struct RequestsService{
          completion: @escaping(T) -> Void,
          failure: ((String) -> Void)?) {
          
-         netModel.sendRequest(
+         netService.sendRequest(
              endPoint: endPoint,
              httpMethod: .GET,
              headers: ["Content-Type": "application/json"],

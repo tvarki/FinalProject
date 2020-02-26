@@ -18,6 +18,11 @@ class PostService{
     let batchSize = 2
     var timer = Timer()
     
+    
+    
+    
+    var tmp : [NewMonster] = []
+    
     init(){
         
     }
@@ -72,7 +77,7 @@ class PostService{
         return dbManager.getCount(type: type)
     }
     
-    
+    /*
     
     //MARK:- Sownload batchSize count posts
     @objc func downloadPosts(endPoint: String, topCompletion: @escaping ()->(), failure: @escaping (String)->()){
@@ -111,5 +116,6 @@ class PostService{
             }
         }
     }
+ */
 }
 

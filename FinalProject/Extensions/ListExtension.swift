@@ -9,16 +9,16 @@
 import Foundation
 import RealmSwift
 
-extension List where Element == DBProficiencies{
-    func toString()->String{
-        guard self.count != 0 else{return ""}
-        var res = "Profiencies".makeBold().addLineBreaker()
-        for tmp in self{
-            res.append("\(tmp.name) = \(tmp.value)".addLineBreaker())
-        }
-        return res
-    }
-}
+//extension List where Element == DBProficiencies{
+//    func toString()->String{
+//        guard self.count != 0 else{return ""}
+//        var res = "Profiencies".makeBold().addLineBreaker()
+//        for tmp in self{
+//            res.append("\(tmp.name) = \(tmp.value)".addLineBreaker())
+//        }
+//        return res
+//    }
+//}
 
 extension List where Element == String{
     func toString(type: typeDamageListString)->String{
@@ -57,17 +57,40 @@ extension List where Element == DBActions{
         return res
     }
 }
+//
+//extension List where Element == DBSpecialAbilities{
+//    func toString()->String{
+//        guard self.count != 0 else{return ""}
+//        var res = ""
+//        for tmp in self{
+//            res.append(tmp.toString().addLineBreaker())
+//        }
+//        return res
+//    }
+//}
 
-extension List where Element == DBSpecialAbilities{
-    func toString()->String{
-        guard self.count != 0 else{return ""}
-        var res = ""
-        for tmp in self{
-            res.append(tmp.toString().addLineBreaker())
-        }
-        return res
-    }
+extension List where Element == NewDBActions{
+    func toString(type: newActionsType)->String{
+           guard self.count != 0 else{return ""}
+           
+           var res = ""
+           switch type {
+           case .Actions:
+               res.append("Actions: ".makeBold().addLineBreaker())
+           case .LegendaryActions:
+               res.append("LegendaryActions: ".makeBold().addLineBreaker())
+            case .SpecialAbilities:
+            res.append("Special Abilities: ".makeBold().addLineBreaker())
+
+            }
+
+           for tmp in self{
+               res.append(tmp.toString())
+           }
+           return res
+       }
 }
+
 
 enum typeDamageListString{
     case Vulnerabilities
@@ -78,4 +101,10 @@ enum typeDamageListString{
 enum actionsType{
     case Actions
     case LegendaryActions
+}
+
+enum newActionsType{
+    case Actions
+    case LegendaryActions
+    case SpecialAbilities
 }

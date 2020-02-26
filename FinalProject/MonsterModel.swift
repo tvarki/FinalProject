@@ -16,17 +16,19 @@ protocol ModelUpdating: AnyObject{
 
 
 final class MonsterModel{
+
+    let requestService = RequestsService()
     
     private var isFavorite = false
     
-    private var monsterArray : [DBMonster] = []
+    private var monsterArray : [NewDBMonster] = []
     
-    private var tmpMonsterArray : [DBMonster] = []
+    private var tmpMonsterArray : [NewDBMonster] = []
     
-    private var favoriteArray: [DBMonster] = []
-    private var searchFavoriteArray: [DBMonster] = []
-
-    private var searchMonsterArray : [DBMonster] = []
+    private var favoriteArray: [NewDBMonster] = []
+    private var searchFavoriteArray: [NewDBMonster] = []
+    
+    private var searchMonsterArray : [NewDBMonster] = []
     
     private var postService = PostService()
     
@@ -47,11 +49,11 @@ final class MonsterModel{
     
     
     func getFavoriteList(){
-        let type = SwiftClassFactory.getDBMonsterClass()
+        let type = SwiftClassFactory.getNewDBMonsterClass()
         favoriteArray = postService.getAllFAvoritedPosts(ofType: type)
         searchFavoriteArray = favoriteArray
         searchChanged(str: searchString, filterList: searchFilterArray)
-
+        
     }
     
     
@@ -62,7 +64,7 @@ final class MonsterModel{
     
     
     func updatePostsFromInternet(){
-        postService.downloadPosts(endPoint: "/api/monsters/", topCompletion: {
+        self.downloadMonsterPosts(endPoint: "monsters/", topCompletion: {
             DispatchQueue.main.sync {
                 self.updateFromDB()
                 self.delegate?.updateModel()
@@ -77,9 +79,9 @@ final class MonsterModel{
         searchFavoriteArray.remove(at: index)
     }
     
-    func getPost(index: String) -> DBMonster?{
+    func getPost(index: String) -> NewDBMonster?{
         for monster in searchMonsterArray {
-            if monster.index == index {
+            if monster.name == index {
                 return monster
             }
         }
@@ -93,33 +95,32 @@ final class MonsterModel{
     
     func updateFromDB(){
         
-        let type = SwiftClassFactory.getDBMonsterClass()
+        let type = SwiftClassFactory.getNewDBMonsterClass()
         monsterArray = self.postService.getAllPosts(ofType: type)
         searchMonsterArray.removeAll()
         searchChanged(str: searchString, filterList: searchFilterArray)
         
         self.monsterArray.forEach{ mstr in
-            if !self.monsterType.contains(mstr.type){
-                self.monsterType.append(mstr.type)
+            if !self.monsterType.contains(mstr.type.lowercased()){
+                self.monsterType.append(mstr.type.lowercased())
             }
         }
         self.monsterType.sort()
         
     }
     
-    
     func setFaforite(forIndex: Int, value: Bool){
-        let type = SwiftClassFactory.getDBMonsterClass()
-        let object: DBMonster
+        let type = SwiftClassFactory.getNewDBMonsterClass()
+        let object: NewDBMonster
         if !isFavorite{object = searchMonsterArray[forIndex]}
         else { object =  searchFavoriteArray[forIndex]}
         
-        let myObject = DBMonster(from: object)
+        let myObject = NewDBMonster(from: object)
         myObject.isFavorite = value
         self.postService.changePostInDB(object: myObject, type: type)
     }
     
-    func getAllPosts()->[DBMonster]{
+    func getAllPosts()->[NewDBMonster]{
         if !isFavorite{ return searchMonsterArray}
         else { return searchFavoriteArray}
     }
@@ -127,7 +128,6 @@ final class MonsterModel{
     func getAllMonsterTypes()->[String]{
         return monsterType
     }
-    
     
     func searchChanged(str: String, filterList:[String]){
         searchString = str
@@ -137,7 +137,7 @@ final class MonsterModel{
             
             monsterArray.forEach{monster in
                 if monster.name.contains(str) || str == "" {
-                    if filterList.contains(monster.type) || filterList.count == 0{
+                    if filterList.contains(monster.type.lowercased()) || filterList.count == 0{
                         searchMonsterArray.append(monster)
                     }
                 }
@@ -147,13 +147,40 @@ final class MonsterModel{
             searchFavoriteArray.removeAll()
             favoriteArray.forEach{monster in
                 if monster.name.contains(str) || str == "" {
-                    if filterList.contains(monster.type) || filterList.count == 0{
+                    if filterList.contains(monster.type.lowercased()) || filterList.count == 0{
                         searchFavoriteArray.append(monster)
                     }
                 }
             }
         }
-        
     }
+    
+    @objc func downloadMonsterPosts(endPoint: String, topCompletion: @escaping ()->(), failure: @escaping (String)->()){
+            DispatchQueue(label: "background").async {
+                /// Для оперативной очистки памяти
+                autoreleasepool {
+                    
+                    self.requestService.sendGetReqest(
+                        type: SwiftClassFactory.getNewCommonRequestClass(),
+                        endPoint: endPoint,
+                        completion: { res  in
+                            res.results.forEach{ r in
+                                let test2 = (SwiftClassFactory.createNewDBMonsterClass(tmp: r))
+                                self.postService.addPostToDB(post: test2)
+                            }
+                            topCompletion()
+                            if res.next != nil{
+                                self.downloadMonsterPosts(endPoint: res.next!, topCompletion:                               topCompletion, failure: failure)
+                            }
+                    },
+                            failure: { error in
+                                DispatchQueue.main.async {
+                                    failure(error)
+    //                                print(error)
+                                }
+                    })
+                }
+            }
+        }
     
 }

@@ -173,11 +173,11 @@ struct Speed: Codable{
     let swim: String?
 }
 
-struct Proficiencies: Codable{
-    let name: String
-    let url: String
-    let value: Int
-}
+//struct Proficiencies: Codable{
+//    let name: String
+//    let url: String
+//    let value: Int
+//}
 
 struct Senses: Codable {
     let blindsight: String?
@@ -190,56 +190,133 @@ struct Usage: Codable  {
     let times: Int?
     let rest_types: [String]?
 }
-
-struct SpecialAbilities: Codable{
-    let name: String
-    let desc: String
-    let usage: Usage?
-    let damage: [Damage]?
-    
-}
+//
+//struct SpecialAbilities: Codable{
+//    let name: String
+//    let desc: String
+//    let usage: Usage?
+//    let damage: [Damage]?
+//    
+//}
 
 struct Actions: Codable{
     let name: String
     let desc: String
+    let attack_bonus: Int?
+    let damage_dice: String?
+    let damage_bonus: Int?
 }
 
 //MARK:- Monster struct for json
-struct Monster: Codable{
-    let _id: String
-    let index: String
+//struct Monster: Codable{
+//    let _id: String
+//    let index: String
+//    let name: String
+//    let size: String
+//    let type: String
+//    let subtype: String?
+//    let alignment: String
+//    let armor_class: Int
+//    let hit_points: Int
+//    let hit_dice: String
+//    let speed: Speed
+//    let strength: Int
+//    let dexterity: Int
+//    let constitution: Int
+//    let intelligence: Int
+//    let wisdom: Int
+//    let charisma: Int
+//    let proficiencies: [Proficiencies]
+//    let damage_vulnerabilities: [String]
+//    let damage_resistances: [String]
+//    let damage_immunities: [String]
+//    let condition_immunities: [ConditionImmunities]
+//    let senses: Senses
+//    let languages : String
+//    let challenge_rating : Double?
+//    let special_abilities: [SpecialAbilities]?
+//    let actions: [Actions]?
+//    let legendary_actions : [Actions]?
+//    let url: String
+//    
+//}
+
+//
+//struct ConditionImmunities: Codable{
+//    let name: String
+//    let url: String
+//}
+
+
+struct NewSpeed: Codable{
+    let walk: Int?
+    let fly: Int?
+    let swim: Int?
+    let climb: Int?
+}
+
+struct NewActions: Codable{
+    let name: String
+    let desc: String
+}
+
+
+struct NewCommonReq: Codable{
+    let count: Int
+    let next: String?
+    let previous: String?
+    let results:[NewMonster]
+}
+
+
+struct NewMonster: Codable{
+    let slug: String
     let name: String
     let size: String
     let type: String
     let subtype: String?
+    let group: String?
     let alignment: String
     let armor_class: Int
+    let armor_desc: String?
     let hit_points: Int
     let hit_dice: String
-    let speed: Speed
+    let speed: NewSpeed
     let strength: Int
     let dexterity: Int
     let constitution: Int
     let intelligence: Int
     let wisdom: Int
     let charisma: Int
-    let proficiencies: [Proficiencies]
-    let damage_vulnerabilities: [String]
-    let damage_resistances: [String]
-    let damage_immunities: [String]
-    let condition_immunities: [ConditionImmunities]
-    let senses: Senses
+    
+    let strength_save : Int?
+    let dexterity_save: Int?
+    let constitution_save: Int?
+    let intelligence_save: Int?
+    let wisdom_save: Int?
+    let charisma_save: Int?
+    let perception: Int?
+    
+    
+//    let proficiencies: [Proficiencies]
+    let damage_vulnerabilities: String
+    let damage_resistances: String
+    let damage_immunities: String
+    
+    let condition_immunities: String?
+    let senses: String?
     let languages : String
-    let challenge_rating : Double?
-    let special_abilities: [SpecialAbilities]?
-    let actions: [Actions]?
-    let legendary_actions : [Actions]?
-    let url: String
+    let challenge_rating : String?
+    
+    let special_abilities: JSONAny
+    let actions: JSONAny
+    let legendary_desc : String?
+
+    let legendary_actions: JSONAny
+
+    let spell_list: [String]
+    
+    let img_main: String?
     
 }
 
-
-struct ConditionImmunities: Codable{
-    let name: String
-    let url: String
-}

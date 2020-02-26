@@ -69,7 +69,7 @@ class DBManager {
             autoreleasepool {
                 // Инстанс рилма должен быть свой для каждой очереди
                 guard let database = try? Realm() else { return }
-                let item = database.objects(P.self).filter("index = %@", object.index).first
+                let item = database.objects(P.self).filter("name = %@", object.name).first
                 if item == nil {
                     try? database.write {
                         database.add(object)
@@ -82,13 +82,13 @@ class DBManager {
     func getItem<P: Object>(index: String, type: P.Type) -> P? {
         guard let database = try? Realm() else { return nil}
         
-        let tmp = database.objects(type).filter("index = %@", index).first
+        let tmp = database.objects(type).filter("name = %@", index).first
         return tmp
     }
     
     func changeData<P: MyDBObject> (object:P, type: P.Type){
         guard let database = try? Realm() else { return }
-        var item = database.objects(type).filter("index = %@", object.index).first
+        var item = database.objects(type).filter("name = %@", object.name).first
         if item != nil{
             try? database.write {
                 item?.isFavorite = object.isFavorite

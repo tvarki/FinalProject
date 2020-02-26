@@ -13,23 +13,41 @@ class SwiftClassFactory{
         
     }
     
-    static func createDBMonsterClass(tmp: Any) -> DBMonster{
-        let any = tmp as? Monster
-        guard any != nil else{return DBMonster()}
-        let tmp = DBMonster(from: any!)
+//    static func createDBMonsterClass(tmp: Any) -> DBMonster{
+//        let any = tmp as? Monster
+//        guard any != nil else{return DBMonster()}
+//        let tmp = DBMonster(from: any!)
+//        return tmp
+//    }
+    
+    static func createNewDBMonsterClass(tmp: Any) -> NewDBMonster{
+        let any = tmp as? NewMonster
+        guard any != nil else{return NewDBMonster()}
+        let tmp = NewDBMonster(from: any!)
         return tmp
     }
 
-    static func getDBMonsterClass()->DBMonster.Type{
-        return DBMonster.self
+//    static func getDBMonsterClass()->DBMonster.Type{
+//        return DBMonster.self
+//    }
+    static func getNewDBMonsterClass()->NewDBMonster.Type{
+        return NewDBMonster.self
     }
     
-    static func getMonsterClass()->Monster.Type{
-        return Monster.self
+    static func getNewMonsterClass()->NewMonster.Type{
+        return NewMonster.self
     }
+    
+//    static func getMonsterClass()->Monster.Type{
+//        return Monster.self
+//    }
     
     static func getCommonRequestClass()->CommonReq.Type{
         return CommonReq.self
+    }
+    
+    static func getNewCommonRequestClass()->NewCommonReq.Type{
+        return NewCommonReq.self
     }
     
 }

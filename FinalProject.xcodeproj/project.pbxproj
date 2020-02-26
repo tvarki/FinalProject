@@ -14,7 +14,7 @@
 		AF353C5723D1AFCF006F72A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF353C5523D1AFCF006F72A1 /* Main.storyboard */; };
 		AF353C5923D1AFD6006F72A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF353C5823D1AFD6006F72A1 /* Assets.xcassets */; };
 		AF353C5C23D1AFD6006F72A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF353C5A23D1AFD6006F72A1 /* LaunchScreen.storyboard */; };
-		AF353C6423D1B0BE006F72A1 /* NetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C6323D1B0BE006F72A1 /* NetModel.swift */; };
+		AF353C6423D1B0BE006F72A1 /* NetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C6323D1B0BE006F72A1 /* NetService.swift */; };
 		AF353C6623D20459006F72A1 /* AllDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C6523D20459006F72A1 /* AllDataClasses.swift */; };
 		AF353C6823D2526D006F72A1 /* RequestsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C6723D2526C006F72A1 /* RequestsService.swift */; };
 		AF37151223DDFD3200D357FE /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151123DDFD3200D357FE /* PostService.swift */; };
@@ -26,6 +26,7 @@
 		AF37151E23DF4B7400D357FE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151D23DF4B7400D357FE /* ColorExtension.swift */; };
 		AF37152023DF4BB500D357FE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151F23DF4BB500D357FE /* UIViewControllerExtension.swift */; };
 		AF37152323DF4C6E00D357FE /* ListExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37152223DF4C6E00D357FE /* ListExtension.swift */; };
+		AF5B17862407000F008F4668 /* JSONAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B17852407000F008F4668 /* JSONAny.swift */; };
 		AF5BE16F2401185A00A2EFCD /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BE16E2401185A00A2EFCD /* FiltersViewController.swift */; };
 		AF5F2EA823F690F800286229 /* MonsterTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5F2EA623F690F800286229 /* MonsterTypeCell.swift */; };
 		AF5F2EA923F690F800286229 /* MonsterTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */; };
@@ -46,7 +47,7 @@
 		AF353C5823D1AFD6006F72A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF353C5B23D1AFD6006F72A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF353C5D23D1AFD6006F72A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF353C6323D1B0BE006F72A1 /* NetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetModel.swift; sourceTree = "<group>"; };
+		AF353C6323D1B0BE006F72A1 /* NetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetService.swift; sourceTree = "<group>"; };
 		AF353C6523D20459006F72A1 /* AllDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDataClasses.swift; sourceTree = "<group>"; };
 		AF353C6723D2526C006F72A1 /* RequestsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsService.swift; sourceTree = "<group>"; };
 		AF37151123DDFD3200D357FE /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		AF37151D23DF4B7400D357FE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		AF37151F23DF4BB500D357FE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		AF37152223DF4C6E00D357FE /* ListExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExtension.swift; sourceTree = "<group>"; };
+		AF5B17852407000F008F4668 /* JSONAny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAny.swift; sourceTree = "<group>"; };
 		AF5BE16E2401185A00A2EFCD /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		AF5F2EA623F690F800286229 /* MonsterTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterTypeCell.swift; sourceTree = "<group>"; };
 		AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonsterTypeCell.xib; sourceTree = "<group>"; };
@@ -140,7 +142,8 @@
 		AF37151023DDF42B00D357FE /* Net */ = {
 			isa = PBXGroup;
 			children = (
-				AF353C6323D1B0BE006F72A1 /* NetModel.swift */,
+				AF5B17852407000F008F4668 /* JSONAny.swift */,
+				AF353C6323D1B0BE006F72A1 /* NetService.swift */,
 				AF353C6723D2526C006F72A1 /* RequestsService.swift */,
 			);
 			path = Net;
@@ -302,12 +305,13 @@
 				AF37151A23DF28E100D357FE /* SwiftClassFactory.swift in Sources */,
 				AF353C6823D2526D006F72A1 /* RequestsService.swift in Sources */,
 				AF37151423DDFE1D00D357FE /* DBManager.swift in Sources */,
+				AF5B17862407000F008F4668 /* JSONAny.swift in Sources */,
 				AF353C5423D1AFCF006F72A1 /* ViewController.swift in Sources */,
 				AF37152323DF4C6E00D357FE /* ListExtension.swift in Sources */,
 				AF5BE16F2401185A00A2EFCD /* FiltersViewController.swift in Sources */,
 				AF5F2EA823F690F800286229 /* MonsterTypeCell.swift in Sources */,
 				AF8071722402509E00B09871 /* MyCustomFilters.swift in Sources */,
-				AF353C6423D1B0BE006F72A1 /* NetModel.swift in Sources */,
+				AF353C6423D1B0BE006F72A1 /* NetService.swift in Sources */,
 				AF353C5023D1AFCF006F72A1 /* AppDelegate.swift in Sources */,
 				AF80717424025E4600B09871 /* MonsterFilterModel.swift in Sources */,
 				AF353C5223D1AFCF006F72A1 /* SceneDelegate.swift in Sources */,

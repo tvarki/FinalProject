@@ -49,7 +49,6 @@ class MyCustomFilters: UIView {
     
     
     @objc private func onUniverseSwitchValueChenged(sender:UISwitch){
-        
         delegate?.updateList(isOn: mySwitch!.isOn, filter: nameLabel?.text! ?? "")
     }
     

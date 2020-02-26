@@ -163,7 +163,7 @@ extension ViewController : UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard let cell = tableView.cellForRow(at: indexPath) else{return}
-        guard let tmp = cell.detailTextLabel?.text else {return}
+        guard let tmp = cell.textLabel?.text else {return}
         
         let item = monsterModel.getPost(index: tmp)
         makeAlert(title: item?.getCellData()[0] ?? "", text: item?.toString() ?? "")
