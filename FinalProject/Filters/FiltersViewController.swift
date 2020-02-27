@@ -18,7 +18,7 @@ protocol FilterListUpdatingDelegate: AnyObject{
 class FiltersViewController: UIViewController {
     
     
-    weak var delegate : setFilterListDelegate?
+    weak var delegate : SetFilterListDelegate?
     public var allFiltersStrings: [String] = []
     
     public var myFilters: [String] = []
@@ -31,6 +31,8 @@ class FiltersViewController: UIViewController {
         super.viewDidLoad()
         var yTmp = 0
         let scrollView = UIScrollView(frame: view.bounds)
+        
+        
         monsterFilterModel = MonsterFilterModel(allFiltersStrings:allFiltersStrings,  list: myFilters)
         let allFilters = monsterFilterModel?.getList()
         allFilters!.forEach{fltr in
@@ -45,12 +47,9 @@ class FiltersViewController: UIViewController {
         view.addSubview(scrollView)
     }
     
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
         if self.isMovingFromParent {
-            
             var tmp = monsterFilterModel?.getList()
             var list:[String] = []
             tmp?.forEach{ fltr in
@@ -59,14 +58,9 @@ class FiltersViewController: UIViewController {
                 }
             }
             delegate?.updateList(list: list)
-            
         }
     }
-    
 }
-
-
-
 
 extension FiltersViewController: FilterListUpdatingDelegate{
     func updateList(isOn: Bool, filter: String) {

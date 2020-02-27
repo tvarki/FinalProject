@@ -23,22 +23,27 @@ import UIKit
 //    
 //}
 
-protocol setFilterListDelegate: AnyObject{
+protocol SetFilterListDelegate: AnyObject{
     func updateList(list: [String])
 }
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var FiltersCollection: UIView!
+    
+    
+    var typesCollectionViewCOntroller : MyChildFilterViewController?
+    
     
     var searchBar : UISearchBar? = nil
     private let refreshControl = UIRefreshControl()
     
     let cellID = "MonsterTypeCell"
     
-    @IBOutlet weak var typesCollectionView: UICollectionView!
-    
     var isSearching = false
     
-//    var mtArray:[MonsterType] = []
+    //    var mtArray:[MonsterType] = []
     
     var monsterFilters: [String] = []
     
@@ -53,63 +58,76 @@ class ViewController: UIViewController {
     @IBOutlet weak var monsterTableVIew: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
         setup()
     }
     
-
+    
+    
     @IBAction func tablePickerValueChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
             
-                case 0:
-                    monsterModel.switchToFavorite(isTrue:false)
-//                    print(0)
-                case 1:
-                    monsterModel.switchToFavorite(isTrue:true)
-//                    print(1)
-                default:
-//                    print(0)
-                    monsterModel.switchToFavorite(isTrue:false)
-        
-                }
+        case 0:
+            monsterModel.switchToFavorite(isTrue:false)
+        //                    print(0)
+        case 1:
+            monsterModel.switchToFavorite(isTrue:true)
+        //                    print(1)
+        default:
+            //                    print(0)
+            monsterModel.switchToFavorite(isTrue:false)
+            
+        }
         monsterTableVIew.reloadData()
     }
-
-
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         search(str: searchBar?.text ?? "", filterList: monsterFilters)
-        setupCollectionViewVisibility()
-        typesCollectionView.reloadData()
+        setupViewVisibility()
     }
     
     
     @IBAction func filtersButtonPressed(_ sender: UIButton) {
         
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-              guard let viewController = storyboard.instantiateViewController(withIdentifier: "Filters") as? FiltersViewController else { return }
-                     
-        viewController.myFilters = monsterFilters
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "NewFilterViewController") as? NewFilterViewController else { return }
+
         
-        viewController.allFiltersStrings = monsterModel.getAllMonsterTypes()
-        
+        viewController.allTypeFiltersStrings = monsterModel.getAllMonsterTypes()
+        viewController.currentActiveTypeFilter = typesCollectionViewCOntroller?.getList() ?? []                
         viewController.delegate = self
         navigationController?.pushViewController(viewController, animated: true)
-
+        
+        
+        //        let vc = NewFilterViewController(nibName: "NewFilterViewController", bundle: nil)
+        //        vc.allTypeFiltersStrings = monsterModel.getAllMonsterTypes()
+        //        self.navigationController!.pushViewController(vc, animated: true)
+        //
+        //
+        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //              guard let viewController = storyboard.instantiateViewController(withIdentifier: "Filters") as? FiltersViewController else { return }
+        //
+        //        viewController.myFilters = typesCollectionViewCOntroller?.getList() ?? []
+        //
+        //        viewController.allFiltersStrings = monsterModel.getAllMonsterTypes()
+        //
+        //        viewController.delegate = self
+        //        navigationController?.pushViewController(viewController, animated: true)
+        
     }
     
     
     
     func setup(){
         
-        setupCollectionViewVisibility()
+        configureContentView()
         monsterModel.delegate = self
-        
         configurePullToRefresh()
-        
-        typesCollectionView.delegate = self
-        typesCollectionView.dataSource = self
-        
-        typesCollectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
-        
         monsterTableVIew.delegate = self
         monsterTableVIew.dataSource = self
         
@@ -117,8 +135,18 @@ class ViewController: UIViewController {
         monsterTableVIew.tableHeaderView = searchBar
         searchBar?.delegate = self
         monsterModel.switchToFavorite(isTrue:false)
-
         
+        
+    }
+    
+    func configureContentView(){
+        guard let locationController = children.first as? MyChildFilterViewController else  {
+            fatalError("Check storyboard for missing MyTestChildViewController")
+        }
+        typesCollectionViewCOntroller = locationController
+        
+        typesCollectionViewCOntroller?.delegate = self
+        setupViewVisibility()
     }
     
     
@@ -146,14 +174,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func setupCollectionViewVisibility(){
-        if monsterFilters.count>0{
-            typesCollectionView.isHidden = false
-        }
-        else{
-            typesCollectionView.isHidden = true
-        }
-    }
+    
 }
 
 extension ViewController : UITableViewDelegate{
@@ -171,33 +192,33 @@ extension ViewController : UITableViewDelegate{
     }
     
     //MARK:- Swipe(right) action
-      func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-          
-          let cell = tableView.cellForRow(at: indexPath)
-          let actionSettings = createTypeActionSettings(cell: cell!,toDo: .checkUncheck)
-          
-          let action = UIContextualAction(style: .normal, title: actionSettings.title) { (action, view, completionHandler) in
-              
-              tableView.beginUpdates()
-              cell?.accessoryType = actionSettings.aType
-              
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        let actionSettings = createTypeActionSettings(cell: cell!,toDo: .checkUncheck)
+        
+        let action = UIContextualAction(style: .normal, title: actionSettings.title) { (action, view, completionHandler) in
             
-              self.checkUncheck(type: actionSettings.aType, indexPath: indexPath)
-              completionHandler(true)
-              tableView.endUpdates()
-          }
-          action.backgroundColor = actionSettings.bColor
-          let configuration = UISwipeActionsConfiguration(actions: [ action ])
-          return configuration
-      }
+            tableView.beginUpdates()
+            cell?.accessoryType = actionSettings.aType
+            
+            
+            self.checkUncheck(type: actionSettings.aType, indexPath: indexPath)
+            completionHandler(true)
+            tableView.endUpdates()
+        }
+        action.backgroundColor = actionSettings.bColor
+        let configuration = UISwipeActionsConfiguration(actions: [ action ])
+        return configuration
+    }
     
     
     func checkUncheck(type : UITableViewCell.AccessoryType, indexPath:IndexPath){
         if type == .checkmark{
             monsterModel.setFaforite(forIndex: indexPath.row, value:true)
-//            self.talantModel?.getTalant(at: indexPath.row)?.setIsChecked(isChecked: true)
+            //            self.talantModel?.getTalant(at: indexPath.row)?.setIsChecked(isChecked: true)
         }else{
-//            self.talantModel?.getTalant(at: indexPath.row)?.setIsChecked(isChecked: false)
+            //            self.talantModel?.getTalant(at: indexPath.row)?.setIsChecked(isChecked: false)
             monsterModel.setFaforite(forIndex: indexPath.row, value:false)
             if tablePickerValue.selectedSegmentIndex == 1{
                 
@@ -214,22 +235,22 @@ extension ViewController : UITableViewDelegate{
     
     
     private func createTypeActionSettings(cell: UITableViewCell, toDo : cellActions) -> cellActionSettings{
-           var settings : cellActionSettings
-           
-           switch toDo {
-           case .delete:
-               settings = cellActionSettings(initTitle: "Удалить", initColor: UIColor.red, initAType: .none)
-           case .deleteAll:
-               settings = cellActionSettings(initTitle: "Очистить таблицу", initColor: UIColor.purple, initAType: .none)
-           case .checkUncheck:
-               if cell.accessoryType == UITableViewCell.AccessoryType.none{
-                   settings = cellActionSettings(initTitle: "To Favorite", initColor: UIColor.systemIndigo, initAType: .checkmark)
-               }else{
-                   settings = cellActionSettings(initTitle: "From Favorite", initColor: UIColor.gray, initAType: .none)
-               }
-           }
-           return settings
-       }
+        var settings : cellActionSettings
+        
+        switch toDo {
+        case .delete:
+            settings = cellActionSettings(initTitle: "Удалить", initColor: UIColor.red, initAType: .none)
+        case .deleteAll:
+            settings = cellActionSettings(initTitle: "Очистить таблицу", initColor: UIColor.purple, initAType: .none)
+        case .checkUncheck:
+            if cell.accessoryType == UITableViewCell.AccessoryType.none{
+                settings = cellActionSettings(initTitle: "To Favorite", initColor: UIColor.systemIndigo, initAType: .checkmark)
+            }else{
+                settings = cellActionSettings(initTitle: "From Favorite", initColor: UIColor.gray, initAType: .none)
+            }
+        }
+        return settings
+    }
     
     
     
@@ -250,7 +271,7 @@ extension ViewController: UITableViewDataSource{
         let cell = monsterTableVIew.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         let index = Int(indexPath.row)
         let items =  monsterModel.getAllPosts()
-//        print(items[index].toString())
+        //        print(items[index].toString())
         
         if items[index].isFavorite{
             cell.accessoryType = .checkmark
@@ -282,7 +303,7 @@ extension ViewController: ModelUpdating{
     func showError(error: String) {
         self.refreshControl.endRefreshing()
         self.makeAlert(title: "Attention", text: "Error while work with network \n \(error)")
-
+        
         self.monsterModel.updateFromDB()
         self.monsterTableVIew.reloadData()
     }
@@ -296,48 +317,14 @@ extension ViewController: ModelUpdating{
     }
 }
 
-
-extension ViewController: UICollectionViewDelegate{
-
-}
-
-extension ViewController: UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return monsterFilters.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
-            as? MonsterTypeCell else { return UICollectionViewCell() }
-        cell.setup(type: monsterFilters[indexPath.row])
-//        cell.setup(monster: mtArray[indexPath.row])
-        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
-        return cell
-    }
-
-
-    @objc func tap(_ sender: UITapGestureRecognizer) {
-
-        let location = sender.location(in: self.typesCollectionView)
-        guard let indexPath = self.typesCollectionView.indexPathForItem(at: location) else {return}
-
-        monsterFilters.remove(at: indexPath.row)
-        search(str: searchBar?.text ?? "", filterList: monsterFilters)
-        setupCollectionViewVisibility()
-        typesCollectionView.reloadData()
-
-    }
-
-}
-
-
-extension ViewController:  setFilterListDelegate{
+extension ViewController:  SetFilterListDelegate{
     func updateList(list: [String]) {
         monsterFilters = list
+        typesCollectionViewCOntroller?.monsterFilters = list
+        typesCollectionViewCOntroller?.reloadData()
     }
- }
- 
+}
+
 
 extension UIViewController{
     
@@ -356,5 +343,22 @@ extension UIViewController{
         case delete
         case deleteAll
         case checkUncheck
+    }
+}
+
+
+extension ViewController : FilterTyped{
+    func tap(type:String) {
+        search(str: searchBar?.text ?? "", filterList: typesCollectionViewCOntroller?.getList() ?? [])
+        setupViewVisibility()
+    }
+    
+    func setupViewVisibility(){
+        if typesCollectionViewCOntroller?.getCount() ?? 0 > 0 {
+            FiltersCollection.isHidden = false
+        }
+        else{
+            FiltersCollection.isHidden = true
+        }
     }
 }

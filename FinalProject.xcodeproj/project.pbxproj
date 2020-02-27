@@ -27,6 +27,8 @@
 		AF37152023DF4BB500D357FE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151F23DF4BB500D357FE /* UIViewControllerExtension.swift */; };
 		AF37152323DF4C6E00D357FE /* ListExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37152223DF4C6E00D357FE /* ListExtension.swift */; };
 		AF5B17862407000F008F4668 /* JSONAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B17852407000F008F4668 /* JSONAny.swift */; };
+		AF5B17912407A413008F4668 /* MyChildFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B17902407A413008F4668 /* MyChildFilterViewController.swift */; };
+		AF5B17942407BA34008F4668 /* NewFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B17922407BA34008F4668 /* NewFilterViewController.swift */; };
 		AF5BE16F2401185A00A2EFCD /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BE16E2401185A00A2EFCD /* FiltersViewController.swift */; };
 		AF5F2EA823F690F800286229 /* MonsterTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5F2EA623F690F800286229 /* MonsterTypeCell.swift */; };
 		AF5F2EA923F690F800286229 /* MonsterTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */; };
@@ -60,6 +62,8 @@
 		AF37151F23DF4BB500D357FE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		AF37152223DF4C6E00D357FE /* ListExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExtension.swift; sourceTree = "<group>"; };
 		AF5B17852407000F008F4668 /* JSONAny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAny.swift; sourceTree = "<group>"; };
+		AF5B17902407A413008F4668 /* MyChildFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChildFilterViewController.swift; sourceTree = "<group>"; };
+		AF5B17922407BA34008F4668 /* NewFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFilterViewController.swift; sourceTree = "<group>"; };
 		AF5BE16E2401185A00A2EFCD /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		AF5F2EA623F690F800286229 /* MonsterTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterTypeCell.swift; sourceTree = "<group>"; };
 		AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonsterTypeCell.xib; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */,
 				AF37152123DF4BD000D357FE /* Extensions */,
 				AF353C5523D1AFCF006F72A1 /* Main.storyboard */,
+				AF5B17902407A413008F4668 /* MyChildFilterViewController.swift */,
 				AF353C5823D1AFD6006F72A1 /* Assets.xcassets */,
 				AF353C5A23D1AFD6006F72A1 /* LaunchScreen.storyboard */,
 				AF353C5D23D1AFD6006F72A1 /* Info.plist */,
@@ -176,6 +181,7 @@
 				AF80717324025E4600B09871 /* MonsterFilterModel.swift */,
 				AF8071712402509E00B09871 /* MyCustomFilters.swift */,
 				AF80717524025F2300B09871 /* Filter.swift */,
+				AF5B17922407BA34008F4668 /* NewFilterViewController.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -305,7 +311,9 @@
 				AF37151A23DF28E100D357FE /* SwiftClassFactory.swift in Sources */,
 				AF353C6823D2526D006F72A1 /* RequestsService.swift in Sources */,
 				AF37151423DDFE1D00D357FE /* DBManager.swift in Sources */,
+				AF5B17912407A413008F4668 /* MyChildFilterViewController.swift in Sources */,
 				AF5B17862407000F008F4668 /* JSONAny.swift in Sources */,
+				AF5B17942407BA34008F4668 /* NewFilterViewController.swift in Sources */,
 				AF353C5423D1AFCF006F72A1 /* ViewController.swift in Sources */,
 				AF37152323DF4C6E00D357FE /* ListExtension.swift in Sources */,
 				AF5BE16F2401185A00A2EFCD /* FiltersViewController.swift in Sources */,

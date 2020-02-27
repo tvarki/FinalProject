@@ -18,19 +18,15 @@ protocol ModelUpdating: AnyObject{
 final class MonsterModel{
 
     let requestService = RequestsService()
+    private var postService = PostService()
     
     private var isFavorite = false
     
     private var monsterArray : [NewDBMonster] = []
-    
-    private var tmpMonsterArray : [NewDBMonster] = []
-    
+    private var searchMonsterArray : [NewDBMonster] = []
+
     private var favoriteArray: [NewDBMonster] = []
     private var searchFavoriteArray: [NewDBMonster] = []
-    
-    private var searchMonsterArray : [NewDBMonster] = []
-    
-    private var postService = PostService()
     
     weak var delegate : ModelUpdating?
     private var monsterType : [String] = []
@@ -47,7 +43,6 @@ final class MonsterModel{
         }
     }
     
-    
     func getFavoriteList(){
         let type = SwiftClassFactory.getNewDBMonsterClass()
         favoriteArray = postService.getAllFAvoritedPosts(ofType: type)
@@ -56,12 +51,10 @@ final class MonsterModel{
         
     }
     
-    
     func switchToFavorite(isTrue:Bool){
         isFavorite = isTrue
         getFavoriteList()
     }
-    
     
     func updatePostsFromInternet(){
         self.downloadMonsterPosts(endPoint: "monsters/", topCompletion: {
@@ -71,7 +64,6 @@ final class MonsterModel{
             }
         }, failure: { error in
             self.delegate?.showError(error: error)
-            
         })
     }
     
@@ -101,8 +93,8 @@ final class MonsterModel{
         searchChanged(str: searchString, filterList: searchFilterArray)
         
         self.monsterArray.forEach{ mstr in
-            if !self.monsterType.contains(mstr.type.lowercased()){
-                self.monsterType.append(mstr.type.lowercased())
+            if !self.monsterType.contains(mstr.type.lowercased().firstUppercased){
+                self.monsterType.append(mstr.type.lowercased().firstUppercased)
             }
         }
         self.monsterType.sort()
@@ -137,7 +129,7 @@ final class MonsterModel{
             
             monsterArray.forEach{monster in
                 if monster.name.contains(str) || str == "" {
-                    if filterList.contains(monster.type.lowercased()) || filterList.count == 0{
+                    if filterList.contains(monster.type.lowercased().firstUppercased) || filterList.count == 0{
                         searchMonsterArray.append(monster)
                     }
                 }
@@ -147,7 +139,7 @@ final class MonsterModel{
             searchFavoriteArray.removeAll()
             favoriteArray.forEach{monster in
                 if monster.name.contains(str) || str == "" {
-                    if filterList.contains(monster.type.lowercased()) || filterList.count == 0{
+                    if filterList.contains(monster.type.lowercased().firstUppercased) || filterList.count == 0{
                         searchFavoriteArray.append(monster)
                     }
                 }
@@ -157,7 +149,6 @@ final class MonsterModel{
     
     @objc func downloadMonsterPosts(endPoint: String, topCompletion: @escaping ()->(), failure: @escaping (String)->()){
             DispatchQueue(label: "background").async {
-                /// Для оперативной очистки памяти
                 autoreleasepool {
                     
                     self.requestService.sendGetReqest(
@@ -182,5 +173,4 @@ final class MonsterModel{
                 }
             }
         }
-    
 }

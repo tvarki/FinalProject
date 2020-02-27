@@ -12,7 +12,7 @@ import RealmSwift
 class PostService{
     
     
-    let requestService = RequestsService()
+//    let requestService = RequestsService()
     let dbManager = DBManager()
     private var count = 0
     let batchSize = 2

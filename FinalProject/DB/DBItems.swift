@@ -913,7 +913,7 @@ class NewDBMonster: Object, MyDBObject{
         var res: [String] = []
         let name = "\(self.name)"
 //        let index = "\(self.index)"
-        let hp = "❤️:\(self.hit_points) 🛡:\(self.armor_class)"
+        let hp = "🩸: \(self.hit_points) 🛡: \(self.armor_class) 🎚: \(self.challenge_rating!)"
         let ac = "AC: \(self.armor_class)"
         
         res.append(name)
