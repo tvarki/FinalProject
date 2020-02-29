@@ -22,15 +22,6 @@ class JSONAny: Codable {
     }
 
     static func decode(from container: SingleValueDecodingContainer) throws -> Any {
-//        if let value = try? container.decode(Bool.self) {
-//            return value
-//        }
-//        if let value = try? container.decode(Int64.self) {
-//            return value
-//        }
-//        if let value = try? container.decode(Double.self) {
-//            return value
-//        }
         if let value = try? container.decode(String.self) {
             return value
         }
@@ -41,22 +32,13 @@ class JSONAny: Codable {
     }
 
     static func decode(from container: inout UnkeyedDecodingContainer) throws -> Any {
-//        if let value = try? container.decode(Bool.self) {
-//            return value
-//        }
-//        if let value = try? container.decode(Int64.self) {
-//            return value
-//        }
-//        if let value = try? container.decode(Double.self) {
-//            return value
-//        }
         if let value = try? container.decode(String.self) {
             return value
         }
-        if let value = try? container.decode(Actions.self) {
+        if let value = try? container.decode(NewActions.self) {
             return value
         }
-        
+
         if let value = try? container.decodeNil() {
             if value {
                 return JSONNull()
@@ -65,11 +47,9 @@ class JSONAny: Codable {
         if var container = try? container.nestedUnkeyedContainer() {
             return try decodeArray(from: &container)
         }
-       
+
         throw decodingError(forCodingPath: container.codingPath)
     }
-
-   
 
     static func decodeArray(from container: inout UnkeyedDecodingContainer) throws -> [Any] {
         var arr: [Any] = []
@@ -80,17 +60,8 @@ class JSONAny: Codable {
         return arr
     }
 
-
-
     static func encode(to container: inout UnkeyedEncodingContainer, array: [Any]) throws {
         for value in array {
-//            if let value = value as? Bool {
-//                try container.encode(value)
-//            } else if let value = value as? Int64 {
-//                try container.encode(value)
-//            } else if let value = value as? Double {
-//                try container.encode(value)
-//            } else
             if let value = value as? String {
                 try container.encode(value)
             } else if value is JSONNull {
@@ -98,22 +69,14 @@ class JSONAny: Codable {
             } else if let value = value as? [Any] {
                 var container = container.nestedUnkeyedContainer()
                 try encode(to: &container, array: value)
-            }  else {
+            } else {
                 throw encodingError(forValue: value, codingPath: container.codingPath)
             }
         }
     }
 
-   
     static func encode(to container: inout SingleValueEncodingContainer, value: Any) throws {
-//        if let value = value as? Bool {
-//            try container.encode(value)
-//        } else if let value = value as? Int64 {
-//            try container.encode(value)
-//        } else if let value = value as? Double {
-//            try container.encode(value)
-//        } else
-            if let value = value as? String {
+        if let value = value as? String {
             try container.encode(value)
         } else if value is JSONNull {
             try container.encodeNil()
@@ -124,27 +87,26 @@ class JSONAny: Codable {
 
     public required init(from decoder: Decoder) throws {
         if var arrayContainer = try? decoder.unkeyedContainer() {
-            self.value = try JSONAny.decodeArray(from: &arrayContainer)
+            value = try JSONAny.decodeArray(from: &arrayContainer)
         } else {
             let container = try decoder.singleValueContainer()
-            self.value = try JSONAny.decode(from: container)
+            value = try JSONAny.decode(from: container)
         }
     }
 
     public func encode(to encoder: Encoder) throws {
-        if let arr = self.value as? [Any] {
+        if let arr = value as? [Any] {
             var container = encoder.unkeyedContainer()
             try JSONAny.encode(to: &container, array: arr)
-        }  else {
+        } else {
             var container = encoder.singleValueContainer()
-            try JSONAny.encode(to: &container, value: self.value)
+            try JSONAny.encode(to: &container, value: value)
         }
     }
 }
 
 class JSONNull: Codable {
-    public init() {
-    }
+    public init() {}
 
     public required init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
@@ -159,10 +121,10 @@ class JSONNull: Codable {
     }
 }
 
-class MyCodingKey : CodingKey {
+class MyCodingKey: CodingKey {
     let key: String
 
-    required init?(intValue: Int) {
+    required init?(intValue _: Int) {
         return nil
     }
 

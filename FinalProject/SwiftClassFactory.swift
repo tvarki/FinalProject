@@ -8,52 +8,34 @@
 
 import Foundation
 
-class SwiftClassFactory{
-    init(){
-        
-    }
-    
-//    static func createDBMonsterClass(tmp: Any) -> DBMonster{
-//        let any = tmp as? Monster
-//        guard any != nil else{return DBMonster()}
-//        let tmp = DBMonster(from: any!)
-//        return tmp
-//    }
-    
-    static func createNewDBMonsterClass(tmp: Any) -> NewDBMonster{
+class SwiftClassFactory {
+    init() {}
+
+    static func createNewDBMonsterClass(tmp: Any) -> NewDBMonster {
         let any = tmp as? NewMonster
-        guard any != nil else{return NewDBMonster()}
+        guard any != nil else { return NewDBMonster() }
         let tmp = NewDBMonster(from: any!)
         return tmp
     }
 
-//    static func getDBMonsterClass()->DBMonster.Type{
-//        return DBMonster.self
-//    }
-    static func getNewDBMonsterClass()->NewDBMonster.Type{
+    static func getNewDBMonsterClass() -> NewDBMonster.Type {
         return NewDBMonster.self
     }
-    
-    static func getNewMonsterClass()->NewMonster.Type{
+
+    static func getNewMonsterClass() -> NewMonster.Type {
         return NewMonster.self
     }
-    
-//    static func getMonsterClass()->Monster.Type{
-//        return Monster.self
-//    }
-    
-    static func getCommonRequestClass()->CommonReq.Type{
-        return CommonReq.self
+
+    static func getMonsterItemClass() -> MonsterItem.Type {
+        return MonsterItem.self
     }
-    
-    static func getNewCommonRequestClass()->NewCommonReq.Type{
+
+    static func getNewCommonRequestClass() -> NewCommonReq.Type {
         return NewCommonReq.self
     }
-    
 }
 
-
-//enum CreateDBSwiftClass {
+// enum CreateDBSwiftClass {
 //
 //    case Monster
 //    case Usage
@@ -68,9 +50,9 @@ class SwiftClassFactory{
 //            return tmp
 //        }
 //    }
-//}
+// }
 //
-//class SwiftClassFactory{
+// class SwiftClassFactory{
 //    let data : CreateDBSwiftClass
 //
 //    init(_ data: CreateDBSwiftClass){
@@ -82,4 +64,4 @@ class SwiftClassFactory{
 //        case .Usage: return CreateDBSwiftClass.Usage.returnClass(data: tmp)
 //        }
 //    }
-//}
+// }

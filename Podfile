@@ -9,5 +9,7 @@ target 'FinalProject' do
 
   source 'https://github.com/CocoaPods/Specs.git'
   pod 'RealmSwift'
+  pod 'SwiftLint'
+  pod 'SwiftFormat'
 
 end

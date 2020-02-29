@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-//extension List where Element == DBProficiencies{
+// extension List where Element == DBProficiencies{
 //    func toString()->String{
 //        guard self.count != 0 else{return ""}
 //        var res = "Profiencies".makeBold().addLineBreaker()
@@ -18,12 +18,12 @@ import RealmSwift
 //        }
 //        return res
 //    }
-//}
+// }
 
-extension List where Element == String{
-    func toString(type: typeDamageListString)->String{
-        guard self.count != 0 else{return ""}
-        
+extension List where Element == String {
+    func toString(type: TypeDamageListString) -> String {
+        guard count != 0 else { return "" }
+
         var res = ""
         switch type {
         case .Immunities:
@@ -33,32 +33,15 @@ extension List where Element == String{
         case .Vulnerabilities:
             res.append("Vulnerabilities: ".makeBold().addLineBreaker())
         }
-        for tmp in self{
+        for tmp in self {
             res.append(tmp.addLineBreaker())
         }
         return res
     }
 }
 
-extension List where Element == DBActions{
-    func toString(type: actionsType)->String{
-        guard self.count != 0 else{return ""}
-        
-        var res = ""
-        switch type {
-        case .Actions:
-            res.append("Actions: ".makeBold().addLineBreaker())
-        case .LegendaryActions:
-            res.append("LegendaryActions: ".makeBold().addLineBreaker())
-        }
-        for tmp in self{
-            res.append(tmp.toString())
-        }
-        return res
-    }
-}
 //
-//extension List where Element == DBSpecialAbilities{
+// extension List where Element == DBSpecialAbilities{
 //    func toString()->String{
 //        guard self.count != 0 else{return ""}
 //        var res = ""
@@ -67,43 +50,58 @@ extension List where Element == DBActions{
 //        }
 //        return res
 //    }
-//}
+// }
 
-extension List where Element == NewDBActions{
-    func toString(type: newActionsType)->String{
-           guard self.count != 0 else{return ""}
-           
-           var res = ""
-           switch type {
-           case .Actions:
-               res.append("Actions: ".makeBold().addLineBreaker())
-           case .LegendaryActions:
-               res.append("LegendaryActions: ".makeBold().addLineBreaker())
-            case .SpecialAbilities:
+extension List where Element == NewDBActions {
+    func toString(type: ActionsType) -> String {
+        guard count != 0 else { return "" }
+
+        var res = ""
+        switch type {
+        case .Actions:
+            res.append("Actions: ".makeBold().addLineBreaker())
+        case .LegendaryActions:
+            res.append("LegendaryActions: ".makeBold().addLineBreaker())
+        case .SpecialAbilities:
             res.append("Special Abilities: ".makeBold().addLineBreaker())
+        }
 
-            }
-
-           for tmp in self{
-               res.append(tmp.toString())
-           }
-           return res
-       }
+        for tmp in self {
+            res.append(tmp.toString())
+        }
+        return res
+    }
 }
 
+extension Array where Element == Actions {
+    func toString(type: ActionsType) -> String {
+        guard count != 0 else { return "" }
 
-enum typeDamageListString{
+        var res = ""
+        res.append("".addLineBreaker())
+        switch type {
+        case .Actions:
+            res.append("Actions: ".makeBold().addLineBreaker())
+        case .LegendaryActions:
+            res.append("LegendaryActions: ".makeBold().addLineBreaker())
+        case .SpecialAbilities:
+            res.append("Special Abilities: ".makeBold().addLineBreaker())
+        }
+
+        for tmp in self {
+            res.append(tmp.toString(type: type))
+        }
+        return res
+    }
+}
+
+enum TypeDamageListString {
     case Vulnerabilities
     case Resistances
     case Immunities
 }
 
-enum actionsType{
-    case Actions
-    case LegendaryActions
-}
-
-enum newActionsType{
+enum ActionsType {
     case Actions
     case LegendaryActions
     case SpecialAbilities

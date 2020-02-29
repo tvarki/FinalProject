@@ -14,13 +14,13 @@
 		AF353C5723D1AFCF006F72A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF353C5523D1AFCF006F72A1 /* Main.storyboard */; };
 		AF353C5923D1AFD6006F72A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF353C5823D1AFD6006F72A1 /* Assets.xcassets */; };
 		AF353C5C23D1AFD6006F72A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF353C5A23D1AFD6006F72A1 /* LaunchScreen.storyboard */; };
-		AF353C6423D1B0BE006F72A1 /* NetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C6323D1B0BE006F72A1 /* NetService.swift */; };
-		AF353C6623D20459006F72A1 /* AllDataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C6523D20459006F72A1 /* AllDataClasses.swift */; };
-		AF353C6823D2526D006F72A1 /* RequestsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C6723D2526C006F72A1 /* RequestsService.swift */; };
-		AF37151223DDFD3200D357FE /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151123DDFD3200D357FE /* PostService.swift */; };
+		AF353C6423D1B0BE006F72A1 /* NetCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C6323D1B0BE006F72A1 /* NetCore.swift */; };
+		AF353C6623D20459006F72A1 /* NewMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C6523D20459006F72A1 /* NewMonster.swift */; };
+		AF353C6823D2526D006F72A1 /* NetRequestsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C6723D2526C006F72A1 /* NetRequestsService.swift */; };
+		AF37151223DDFD3200D357FE /* CorePostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151123DDFD3200D357FE /* CorePostService.swift */; };
 		AF37151423DDFE1D00D357FE /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151323DDFE1D00D357FE /* DBManager.swift */; };
-		AF37151623DDFEDE00D357FE /* DBItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151523DDFEDE00D357FE /* DBItems.swift */; };
-		AF37151823DEE47A00D357FE /* MonsterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151723DEE47A00D357FE /* MonsterModel.swift */; };
+		AF37151623DDFEDE00D357FE /* NewDBMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151523DDFEDE00D357FE /* NewDBMonster.swift */; };
+		AF37151823DEE47A00D357FE /* MonsterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151723DEE47A00D357FE /* MonsterService.swift */; };
 		AF37151A23DF28E100D357FE /* SwiftClassFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151923DF28E100D357FE /* SwiftClassFactory.swift */; };
 		AF37151C23DF4B1500D357FE /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151B23DF4B1500D357FE /* StringExtensions.swift */; };
 		AF37151E23DF4B7400D357FE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37151D23DF4B7400D357FE /* ColorExtension.swift */; };
@@ -29,12 +29,21 @@
 		AF5B17862407000F008F4668 /* JSONAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B17852407000F008F4668 /* JSONAny.swift */; };
 		AF5B17912407A413008F4668 /* MyChildFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B17902407A413008F4668 /* MyChildFilterViewController.swift */; };
 		AF5B17942407BA34008F4668 /* NewFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B17922407BA34008F4668 /* NewFilterViewController.swift */; };
-		AF5BE16F2401185A00A2EFCD /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BE16E2401185A00A2EFCD /* FiltersViewController.swift */; };
 		AF5F2EA823F690F800286229 /* MonsterTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5F2EA623F690F800286229 /* MonsterTypeCell.swift */; };
 		AF5F2EA923F690F800286229 /* MonsterTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */; };
-		AF8071722402509E00B09871 /* MyCustomFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8071712402509E00B09871 /* MyCustomFilters.swift */; };
-		AF80717424025E4600B09871 /* MonsterFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80717324025E4600B09871 /* MonsterFilterModel.swift */; };
-		AF80717624025F2300B09871 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80717524025F2300B09871 /* Filter.swift */; };
+		AF8F13D32407E1E0003BDDB5 /* SingleFilterPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F13D22407E1E0003BDDB5 /* SingleFilterPickerViewController.swift */; };
+		AFACEAD62408FCB100F9FBD5 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEAD52408FCB100F9FBD5 /* Actions.swift */; };
+		AFACEAD82408FCCA00F9FBD5 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEAD72408FCCA00F9FBD5 /* Speed.swift */; };
+		AFACEADB2408FDD700F9FBD5 /* NewCommonReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEADA2408FDD700F9FBD5 /* NewCommonReq.swift */; };
+		AFACEADD2408FDF000F9FBD5 /* NewSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEADC2408FDF000F9FBD5 /* NewSpeed.swift */; };
+		AFACEADF2408FE1300F9FBD5 /* NewActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEADE2408FE1300F9FBD5 /* NewActions.swift */; };
+		AFACEAE22408FE6600F9FBD5 /* NewDBSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEAE12408FE6600F9FBD5 /* NewDBSpeed.swift */; };
+		AFACEAE42408FE8800F9FBD5 /* NewDBActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEAE32408FE8800F9FBD5 /* NewDBActions.swift */; };
+		AFACEAE6240907E900F9FBD5 /* UDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEAE5240907E900F9FBD5 /* UDService.swift */; };
+		AFC61D0B24085F3900BB3CA4 /* MonsterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC61D0A24085F3900BB3CA4 /* MonsterItem.swift */; };
+		AFCC201C24093273004E1E37 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC201B24093273004E1E37 /* FilterViewController.swift */; };
+		AFD384CE2408E9020054001E /* UniversalItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD384CD2408E9020054001E /* UniversalItemModel.swift */; };
+		AFE0F6E32407F0C0000D6780 /* TripleFilterPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE0F6E22407F0C0000D6780 /* TripleFilterPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,13 +58,13 @@
 		AF353C5823D1AFD6006F72A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF353C5B23D1AFD6006F72A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF353C5D23D1AFD6006F72A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF353C6323D1B0BE006F72A1 /* NetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetService.swift; sourceTree = "<group>"; };
-		AF353C6523D20459006F72A1 /* AllDataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDataClasses.swift; sourceTree = "<group>"; };
-		AF353C6723D2526C006F72A1 /* RequestsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsService.swift; sourceTree = "<group>"; };
-		AF37151123DDFD3200D357FE /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		AF353C6323D1B0BE006F72A1 /* NetCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetCore.swift; sourceTree = "<group>"; };
+		AF353C6523D20459006F72A1 /* NewMonster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMonster.swift; sourceTree = "<group>"; };
+		AF353C6723D2526C006F72A1 /* NetRequestsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetRequestsService.swift; sourceTree = "<group>"; };
+		AF37151123DDFD3200D357FE /* CorePostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorePostService.swift; sourceTree = "<group>"; };
 		AF37151323DDFE1D00D357FE /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
-		AF37151523DDFEDE00D357FE /* DBItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBItems.swift; sourceTree = "<group>"; };
-		AF37151723DEE47A00D357FE /* MonsterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterModel.swift; sourceTree = "<group>"; };
+		AF37151523DDFEDE00D357FE /* NewDBMonster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDBMonster.swift; sourceTree = "<group>"; };
+		AF37151723DEE47A00D357FE /* MonsterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterService.swift; sourceTree = "<group>"; };
 		AF37151923DF28E100D357FE /* SwiftClassFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftClassFactory.swift; sourceTree = "<group>"; };
 		AF37151B23DF4B1500D357FE /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		AF37151D23DF4B7400D357FE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -64,12 +73,21 @@
 		AF5B17852407000F008F4668 /* JSONAny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAny.swift; sourceTree = "<group>"; };
 		AF5B17902407A413008F4668 /* MyChildFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChildFilterViewController.swift; sourceTree = "<group>"; };
 		AF5B17922407BA34008F4668 /* NewFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFilterViewController.swift; sourceTree = "<group>"; };
-		AF5BE16E2401185A00A2EFCD /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		AF5F2EA623F690F800286229 /* MonsterTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterTypeCell.swift; sourceTree = "<group>"; };
 		AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonsterTypeCell.xib; sourceTree = "<group>"; };
-		AF8071712402509E00B09871 /* MyCustomFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomFilters.swift; sourceTree = "<group>"; };
-		AF80717324025E4600B09871 /* MonsterFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterFilterModel.swift; sourceTree = "<group>"; };
-		AF80717524025F2300B09871 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		AF8F13D22407E1E0003BDDB5 /* SingleFilterPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleFilterPickerViewController.swift; sourceTree = "<group>"; };
+		AFACEAD52408FCB100F9FBD5 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		AFACEAD72408FCCA00F9FBD5 /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
+		AFACEADA2408FDD700F9FBD5 /* NewCommonReq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommonReq.swift; sourceTree = "<group>"; };
+		AFACEADC2408FDF000F9FBD5 /* NewSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSpeed.swift; sourceTree = "<group>"; };
+		AFACEADE2408FE1300F9FBD5 /* NewActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActions.swift; sourceTree = "<group>"; };
+		AFACEAE12408FE6600F9FBD5 /* NewDBSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDBSpeed.swift; sourceTree = "<group>"; };
+		AFACEAE32408FE8800F9FBD5 /* NewDBActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDBActions.swift; sourceTree = "<group>"; };
+		AFACEAE5240907E900F9FBD5 /* UDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDService.swift; sourceTree = "<group>"; };
+		AFC61D0A24085F3900BB3CA4 /* MonsterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterItem.swift; sourceTree = "<group>"; };
+		AFCC201B24093273004E1E37 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		AFD384CD2408E9020054001E /* UniversalItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalItemModel.swift; sourceTree = "<group>"; };
+		AFE0F6E22407F0C0000D6780 /* TripleFilterPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleFilterPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,36 +140,20 @@
 		AF353C4E23D1AFCF006F72A1 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
-				AF807177240283E200B09871 /* Filters */,
-				AF37151123DDFD3200D357FE /* PostService.swift */,
-				AF37151923DF28E100D357FE /* SwiftClassFactory.swift */,
-				AF37151723DEE47A00D357FE /* MonsterModel.swift */,
-				AF5B178424066A2F008F4668 /* DB */,
-				AF353C4F23D1AFCF006F72A1 /* AppDelegate.swift */,
-				AF37151023DDF42B00D357FE /* Net */,
-				AF353C6523D20459006F72A1 /* AllDataClasses.swift */,
-				AF353C5123D1AFCF006F72A1 /* SceneDelegate.swift */,
-				AF353C5323D1AFCF006F72A1 /* ViewController.swift */,
-				AF5F2EA623F690F800286229 /* MonsterTypeCell.swift */,
-				AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */,
+				AFC61D072408570600BB3CA4 /* ViewControllers */,
+				AFC61D082408574300BB3CA4 /* XIB */,
+				AFC61D09240857EE00BB3CA4 /* Services */,
+				AFC61D0C2408E64200BB3CA4 /* Core */,
 				AF37152123DF4BD000D357FE /* Extensions */,
+				AF37151923DF28E100D357FE /* SwiftClassFactory.swift */,
+				AF353C4F23D1AFCF006F72A1 /* AppDelegate.swift */,
+				AF353C5123D1AFCF006F72A1 /* SceneDelegate.swift */,
 				AF353C5523D1AFCF006F72A1 /* Main.storyboard */,
-				AF5B17902407A413008F4668 /* MyChildFilterViewController.swift */,
 				AF353C5823D1AFD6006F72A1 /* Assets.xcassets */,
 				AF353C5A23D1AFD6006F72A1 /* LaunchScreen.storyboard */,
 				AF353C5D23D1AFD6006F72A1 /* Info.plist */,
 			);
 			path = FinalProject;
-			sourceTree = "<group>";
-		};
-		AF37151023DDF42B00D357FE /* Net */ = {
-			isa = PBXGroup;
-			children = (
-				AF5B17852407000F008F4668 /* JSONAny.swift */,
-				AF353C6323D1B0BE006F72A1 /* NetService.swift */,
-				AF353C6723D2526C006F72A1 /* RequestsService.swift */,
-			);
-			path = Net;
 			sourceTree = "<group>";
 		};
 		AF37152123DF4BD000D357FE /* Extensions */ = {
@@ -165,25 +167,98 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		AF5B178424066A2F008F4668 /* DB */ = {
+		AFACEAD42408FC8000F9FBD5 /* ServiceItemClasses */ = {
 			isa = PBXGroup;
 			children = (
-				AF37151523DDFEDE00D357FE /* DBItems.swift */,
+				AFC61D0A24085F3900BB3CA4 /* MonsterItem.swift */,
+				AFACEAD52408FCB100F9FBD5 /* Actions.swift */,
+				AFACEAD72408FCCA00F9FBD5 /* Speed.swift */,
+			);
+			path = ServiceItemClasses;
+			sourceTree = "<group>";
+		};
+		AFACEAD92408FDAA00F9FBD5 /* NetwokiItemClasses */ = {
+			isa = PBXGroup;
+			children = (
+				AF5B17852407000F008F4668 /* JSONAny.swift */,
+				AF353C6523D20459006F72A1 /* NewMonster.swift */,
+				AFACEADC2408FDF000F9FBD5 /* NewSpeed.swift */,
+				AFACEADA2408FDD700F9FBD5 /* NewCommonReq.swift */,
+				AFACEADE2408FE1300F9FBD5 /* NewActions.swift */,
+			);
+			path = NetwokiItemClasses;
+			sourceTree = "<group>";
+		};
+		AFACEAE02408FE2A00F9FBD5 /* DBItemClasses */ = {
+			isa = PBXGroup;
+			children = (
+				AF37151523DDFEDE00D357FE /* NewDBMonster.swift */,
+				AFACEAE12408FE6600F9FBD5 /* NewDBSpeed.swift */,
+				AFACEAE32408FE8800F9FBD5 /* NewDBActions.swift */,
+			);
+			path = DBItemClasses;
+			sourceTree = "<group>";
+		};
+		AFC61D072408570600BB3CA4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF5B17922407BA34008F4668 /* NewFilterViewController.swift */,
+				AF8F13D22407E1E0003BDDB5 /* SingleFilterPickerViewController.swift */,
+				AFE0F6E22407F0C0000D6780 /* TripleFilterPickerViewController.swift */,
+				AF5B17902407A413008F4668 /* MyChildFilterViewController.swift */,
+				AF353C5323D1AFCF006F72A1 /* ViewController.swift */,
+				AFCC201B24093273004E1E37 /* FilterViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AFC61D082408574300BB3CA4 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				AF5F2EA623F690F800286229 /* MonsterTypeCell.swift */,
+				AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		AFC61D09240857EE00BB3CA4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AFACEAD42408FC8000F9FBD5 /* ServiceItemClasses */,
+				AF37151723DEE47A00D357FE /* MonsterService.swift */,
+				AF353C6723D2526C006F72A1 /* NetRequestsService.swift */,
+				AFACEAE5240907E900F9FBD5 /* UDService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AFC61D0C2408E64200BB3CA4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AFD384CD2408E9020054001E /* UniversalItemModel.swift */,
+				AFC61D0D2408E6DB00BB3CA4 /* Network */,
+				AFC61D0E2408E75100BB3CA4 /* DB */,
+				AF37151123DDFD3200D357FE /* CorePostService.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AFC61D0D2408E6DB00BB3CA4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AFACEAD92408FDAA00F9FBD5 /* NetwokiItemClasses */,
+				AF353C6323D1B0BE006F72A1 /* NetCore.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AFC61D0E2408E75100BB3CA4 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				AFACEAE02408FE2A00F9FBD5 /* DBItemClasses */,
 				AF37151323DDFE1D00D357FE /* DBManager.swift */,
 			);
 			path = DB;
-			sourceTree = "<group>";
-		};
-		AF807177240283E200B09871 /* Filters */ = {
-			isa = PBXGroup;
-			children = (
-				AF5BE16E2401185A00A2EFCD /* FiltersViewController.swift */,
-				AF80717324025E4600B09871 /* MonsterFilterModel.swift */,
-				AF8071712402509E00B09871 /* MyCustomFilters.swift */,
-				AF80717524025F2300B09871 /* Filter.swift */,
-				AF5B17922407BA34008F4668 /* NewFilterViewController.swift */,
-			);
-			path = Filters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +273,8 @@
 				AF353C4923D1AFCF006F72A1 /* Frameworks */,
 				AF353C4A23D1AFCF006F72A1 /* Resources */,
 				2CD889D69FC34545D5EA3E6E /* [CP] Embed Pods Frameworks */,
+				AFE0F6E5240840E5000D6780 /* ShellScript */,
+				AFE0F6E424083EBE000D6780 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -292,8 +369,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh\"\n\n";
 			showEnvVarsInLog = 0;
+		};
+		AFE0F6E424083EBE000D6780 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+		AFE0F6E5240840E5000D6780 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -303,27 +414,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF37151C23DF4B1500D357FE /* StringExtensions.swift in Sources */,
-				AF80717624025F2300B09871 /* Filter.swift in Sources */,
-				AF37151623DDFEDE00D357FE /* DBItems.swift in Sources */,
-				AF37151823DEE47A00D357FE /* MonsterModel.swift in Sources */,
-				AF353C6623D20459006F72A1 /* AllDataClasses.swift in Sources */,
-				AF37151223DDFD3200D357FE /* PostService.swift in Sources */,
+				AFD384CE2408E9020054001E /* UniversalItemModel.swift in Sources */,
+				AFACEAE6240907E900F9FBD5 /* UDService.swift in Sources */,
+				AF37151623DDFEDE00D357FE /* NewDBMonster.swift in Sources */,
+				AFACEAD82408FCCA00F9FBD5 /* Speed.swift in Sources */,
+				AF37151823DEE47A00D357FE /* MonsterService.swift in Sources */,
+				AF353C6623D20459006F72A1 /* NewMonster.swift in Sources */,
+				AF37151223DDFD3200D357FE /* CorePostService.swift in Sources */,
 				AF37151A23DF28E100D357FE /* SwiftClassFactory.swift in Sources */,
-				AF353C6823D2526D006F72A1 /* RequestsService.swift in Sources */,
+				AF353C6823D2526D006F72A1 /* NetRequestsService.swift in Sources */,
 				AF37151423DDFE1D00D357FE /* DBManager.swift in Sources */,
+				AFACEADF2408FE1300F9FBD5 /* NewActions.swift in Sources */,
+				AFACEAD62408FCB100F9FBD5 /* Actions.swift in Sources */,
 				AF5B17912407A413008F4668 /* MyChildFilterViewController.swift in Sources */,
+				AFACEADB2408FDD700F9FBD5 /* NewCommonReq.swift in Sources */,
 				AF5B17862407000F008F4668 /* JSONAny.swift in Sources */,
 				AF5B17942407BA34008F4668 /* NewFilterViewController.swift in Sources */,
+				AFACEAE22408FE6600F9FBD5 /* NewDBSpeed.swift in Sources */,
 				AF353C5423D1AFCF006F72A1 /* ViewController.swift in Sources */,
 				AF37152323DF4C6E00D357FE /* ListExtension.swift in Sources */,
-				AF5BE16F2401185A00A2EFCD /* FiltersViewController.swift in Sources */,
+				AFC61D0B24085F3900BB3CA4 /* MonsterItem.swift in Sources */,
 				AF5F2EA823F690F800286229 /* MonsterTypeCell.swift in Sources */,
-				AF8071722402509E00B09871 /* MyCustomFilters.swift in Sources */,
-				AF353C6423D1B0BE006F72A1 /* NetService.swift in Sources */,
+				AFACEADD2408FDF000F9FBD5 /* NewSpeed.swift in Sources */,
+				AF353C6423D1B0BE006F72A1 /* NetCore.swift in Sources */,
 				AF353C5023D1AFCF006F72A1 /* AppDelegate.swift in Sources */,
-				AF80717424025E4600B09871 /* MonsterFilterModel.swift in Sources */,
+				AFACEAE42408FE8800F9FBD5 /* NewDBActions.swift in Sources */,
+				AFCC201C24093273004E1E37 /* FilterViewController.swift in Sources */,
 				AF353C5223D1AFCF006F72A1 /* SceneDelegate.swift in Sources */,
 				AF37152023DF4BB500D357FE /* UIViewControllerExtension.swift in Sources */,
+				AFE0F6E32407F0C0000D6780 /* TripleFilterPickerViewController.swift in Sources */,
+				AF8F13D32407E1E0003BDDB5 /* SingleFilterPickerViewController.swift in Sources */,
 				AF37151E23DF4B7400D357FE /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

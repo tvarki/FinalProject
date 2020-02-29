@@ -8,16 +8,18 @@
 
 import UIKit
 
-extension UIViewController{
-    func makeAlert(title: String , text: String) {
+extension UIViewController {
+    func makeAlert(title: String, text: String) {
         let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
-        alert.setValue(text.convertHtmlToAttributedStringWithCSS(font: UIFont(name: "Arial", size: 14), csscolor: UIColor.systemGray.hexString(.RRGGBB), lineheight: 5, csstextalign: "left"), forKey: "attributedMessage")
-        
+        alert.setValue(text.convertHtmlToAttributedStringWithCSS(font: UIFont(name: "Arial", size: 14),
+                                                                 csscolor: UIColor.systemGray.hexString(.RRGGBB),
+                                                                 lineheight: 5, csstextalign: "left"),
+                       forKey: "attributedMessage")
+
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         let subview = (alert.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
         subview.layer.cornerRadius = 1
         subview.backgroundColor = UIColor.systemGray6
-        self.present(alert, animated: true)
-        
+        present(alert, animated: true)
     }
 }

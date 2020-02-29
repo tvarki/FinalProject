@@ -15,7 +15,6 @@ enum HTTPMethod: String {
     case PUT
     case PATCH
     case HEAD
-    // другие
 }
 
 enum Result<T> {
@@ -23,12 +22,9 @@ enum Result<T> {
     case error(description: String)
 }
 
-class NetService {
-    
-    //    let baseURL = "http://dnd5eapi.co"
-    
+class NetCore {
     let baseURL = "https://api.open5e.com/"
-    
+
     func sendRequest<U: Decodable>(
         endPoint: String,
         httpMethod: HTTPMethod = .GET,
@@ -37,24 +33,20 @@ class NetService {
         completion: @escaping (Result<U>) -> Void
     ) {
         let urlString: String
-        if  endPoint.contains(baseURL){
+        if endPoint.contains(baseURL) {
             urlString = endPoint
-        }else{
+        } else {
             urlString = baseURL + endPoint
-            
         }
-        
-        
-        //        print (urlString)
-        guard let url = URL(string: urlString) else {return}
+        guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
-        
+
         for (key, value) in headers {
             request.setValue(value, forHTTPHeaderField: key)
         }
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
                 print(error.localizedDescription)
                 completion(Result.error(description: error.localizedDescription))
@@ -62,9 +54,6 @@ class NetService {
             if
                 let data = data {
                 do {
-//                                        let str = String(decoding: data, as: UTF8.self)
-//                                        print(str)
-                    
                     let result = try JSONDecoder().decode(parseType, from: data)
                     completion(Result.some(object: result))
                 } catch {
@@ -77,9 +66,4 @@ class NetService {
         }
         task.resume()
     }
-    
-    
-    
-    
-    
 }
