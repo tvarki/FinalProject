@@ -11,7 +11,9 @@ import UIKit
 class FilterViewController: UIViewController {
     weak var delegate: SetFilterListDelegate?
 
+    @IBOutlet var hintLabel: UILabel!
     let cellID = "MonsterTypeCell"
+    @IBOutlet var miHintVIew: UIView!
 
     var currentActiveTypeFilter: [String] = []
     var allTypeFiltersStrings: [String] = []
@@ -35,11 +37,33 @@ class FilterViewController: UIViewController {
         }
     }
 
+    override func viewWillTransition(to _: CGSize, with _: UIViewControllerTransitionCoordinator) {
+//        hintLabel.layer.removeAllAnimations()
+//        startBasicAnimation()
+    }
+
     func configure() {
         testCollectionView.delegate = self
         testCollectionView.dataSource = self
         testCollectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
         testCollectionView.allowsMultipleSelection = true
+        hintLabel.layer.cornerRadius = 5
+        hintLabel.layer.masksToBounds = true
+        startBasicAnimation()
+    }
+
+    func startBasicAnimation() {
+        let positionAnimation = CABasicAnimation(keyPath: "position")
+        let startPosition = hintLabel.layer.position
+
+        positionAnimation.fromValue = CGPoint(x: 55, y: startPosition.y)
+        positionAnimation.toValue = CGPoint(x: miHintVIew.frame.width - 55, y: startPosition.y)
+        positionAnimation.duration = 4.5
+        positionAnimation.autoreverses = true
+        positionAnimation.repeatCount = .infinity
+        hintLabel.layer.add(positionAnimation, forKey: "animatePosition")
+
+        //        someView.layer.position = CGPoint(x: startPosition.x, y: startPosition.y + 250)
     }
 }
 

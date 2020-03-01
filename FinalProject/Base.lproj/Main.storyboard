@@ -149,16 +149,16 @@
             </objects>
             <point key="canvasLocation" x="-39.130434782608695" y="750"/>
         </scene>
-        <!--Filter View Controller-->
+        <!--Filters-->
         <scene sceneID="0RQ-Qs-kFQ">
             <objects>
-                <viewController storyboardIdentifier="FilterViewController" id="o8k-Nf-91E" customClass="FilterViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterViewController" title="Filters" id="o8k-Nf-91E" customClass="FilterViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vYW-Br-LqE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6WO-q0-to2">
-                                <rect key="frame" x="10" y="54" width="394" height="808"/>
+                                <rect key="frame" x="10" y="81.5" width="394" height="809.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ohW-Ip-9Nw">
                                     <size key="itemSize" width="50" height="50"/>
@@ -168,23 +168,51 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02m-2U-VTH">
+                                <rect key="frame" x="10" y="49" width="394" height="27.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push on filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXD-2q-CUJ">
+                                        <rect key="frame" x="20" y="4" width="110" height="21.5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="VLQ-Bx-Eaq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="2" height="1"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wXD-2q-CUJ" secondAttribute="bottom" constant="2" id="K7i-aD-cqw"/>
+                                    <constraint firstItem="wXD-2q-CUJ" firstAttribute="top" secondItem="02m-2U-VTH" secondAttribute="top" constant="4" id="Od1-yC-yrL"/>
+                                    <constraint firstItem="wXD-2q-CUJ" firstAttribute="leading" secondItem="02m-2U-VTH" secondAttribute="leading" constant="20" symbolic="YES" id="dcU-hT-wtM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6WO-q0-to2" firstAttribute="leading" secondItem="AfG-4f-ceS" secondAttribute="leading" constant="10" id="YkA-Tr-IG7"/>
-                            <constraint firstAttribute="trailing" secondItem="6WO-q0-to2" secondAttribute="trailing" constant="10" id="hUv-xu-Y4m"/>
-                            <constraint firstItem="6WO-q0-to2" firstAttribute="bottom" secondItem="AfG-4f-ceS" secondAttribute="bottom" id="sKe-JF-Zqf"/>
-                            <constraint firstItem="6WO-q0-to2" firstAttribute="top" secondItem="AfG-4f-ceS" secondAttribute="top" constant="10" id="xyS-Xt-g5g"/>
+                            <constraint firstItem="AfG-4f-ceS" firstAttribute="trailing" secondItem="02m-2U-VTH" secondAttribute="trailing" constant="10" id="D55-Lr-OKO"/>
+                            <constraint firstAttribute="bottom" secondItem="6WO-q0-to2" secondAttribute="bottom" constant="5" id="Sbn-Ls-Lix"/>
+                            <constraint firstItem="6WO-q0-to2" firstAttribute="top" secondItem="02m-2U-VTH" secondAttribute="bottom" constant="5" id="XJc-wl-UgC"/>
+                            <constraint firstItem="02m-2U-VTH" firstAttribute="leading" secondItem="AfG-4f-ceS" secondAttribute="leading" constant="10" id="gd7-37-Ofz"/>
+                            <constraint firstItem="AfG-4f-ceS" firstAttribute="trailing" secondItem="6WO-q0-to2" secondAttribute="trailing" constant="10" id="ib2-yb-WMf"/>
+                            <constraint firstItem="02m-2U-VTH" firstAttribute="top" secondItem="AfG-4f-ceS" secondAttribute="top" constant="5" id="j9a-es-vvV"/>
+                            <constraint firstItem="6WO-q0-to2" firstAttribute="leading" secondItem="AfG-4f-ceS" secondAttribute="leading" constant="10" id="mET-lL-1B6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AfG-4f-ceS"/>
                     </view>
                     <connections>
+                        <outlet property="hintLabel" destination="wXD-2q-CUJ" id="DvY-9a-Lhp"/>
+                        <outlet property="miHintVIew" destination="02m-2U-VTH" id="XVQ-oF-4Py"/>
                         <outlet property="testCollectionView" destination="6WO-q0-to2" id="miF-vb-ZPd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGg-TJ-AFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39" y="76"/>
+            <point key="canvasLocation" x="-39.130434782608695" y="75.669642857142847"/>
         </scene>
         <!--New Filter View Controller-->
         <scene sceneID="4yv-nW-rWZ">
