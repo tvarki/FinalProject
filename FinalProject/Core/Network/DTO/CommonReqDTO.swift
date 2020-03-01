@@ -1,5 +1,5 @@
 //
-//  NewSpeed.swift
+//  NewCommonReq.swift
 //  FinalProject
 //
 //  Created by Дмитрий Яковлев on 28.02.2020.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct DTOSpeed: Codable {
-    let walk: Int?
-    let fly: Int?
-    let swim: Int?
-    let climb: Int?
+struct DTOCommonReq: Codable {
+    let count: Int
+    let next: String?
+    let previous: String?
+    let results: [MonsterDTO]
 }

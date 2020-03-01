@@ -1,5 +1,5 @@
 //
-//  NewAction.swift
+//  NewSpeed.swift
 //  FinalProject
 //
 //  Created by Дмитрий Яковлев on 28.02.2020.
@@ -8,10 +8,9 @@
 
 import Foundation
 
-struct DTOActions: Codable {
-    let name: String
-    let desc: String
-    let attack_bonus: Int?
-    let damage_dice: String?
-    let damage_bonus: Int?
+struct SpeedDTO: Codable {
+    let walk: Int?
+    let fly: Int?
+    let swim: Int?
+    let climb: Int?
 }

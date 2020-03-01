@@ -12,7 +12,7 @@ class SwiftClassFactory {
     init() {}
 
     static func createNewDBMonsterClass(tmp: Any) -> NewDBMonster {
-        let any = tmp as? DTOMonster
+        let any = tmp as? MonsterDTO
         guard any != nil else { return NewDBMonster() }
         let tmp = NewDBMonster(from: any!)
         return tmp
@@ -22,8 +22,8 @@ class SwiftClassFactory {
         return NewDBMonster.self
     }
 
-    static func getNewMonsterClass() -> DTOMonster.Type {
-        return DTOMonster.self
+    static func getNewMonsterClass() -> MonsterDTO.Type {
+        return MonsterDTO.self
     }
 
     static func getMonsterItemClass() -> MonsterItem.Type {

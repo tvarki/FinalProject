@@ -15,7 +15,7 @@ class NewDBSpeed: Object {
     var swim = RealmOptional<Int>()
     var climb = RealmOptional<Int>()
 
-    init(from: DTOSpeed) {
+    init(from: SpeedDTO) {
         walk.value = from.walk
         fly.value = from.fly
         swim.value = from.swim
