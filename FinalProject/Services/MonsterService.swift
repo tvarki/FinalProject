@@ -65,18 +65,6 @@ final class MonsterService {
         return updateMonsterTypes(monsterArray: monsterArray)
     }
 
-    func downloadPost(completion: @escaping ([MonsterItem]) -> Void, failure: @escaping (String) -> Void) {
-        downloadMonsterPosts(endPoint: "monsters/", topCompletion: { array in
-            DispatchQueue.main.async {
-                completion(array)
-            }
-        }, failure: { error in
-            DispatchQueue.main.async {
-                failure(error)
-            }
-        })
-    }
-
     func deleteAll() {
         universalItemModel.deleteAllDB()
     }
@@ -92,7 +80,9 @@ final class MonsterService {
                     self.updateFromDB(completion: topCompletion)
                 },
                 failure: { error in
-                    failure(error)
+                    DispatchQueue.main.async {
+                        failure(error)
+                    }
                 }
             )
         }
