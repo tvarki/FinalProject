@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NewSpeed: Codable {
+struct DTOSpeed: Codable {
     let walk: Int?
     let fly: Int?
     let swim: Int?

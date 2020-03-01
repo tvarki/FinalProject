@@ -15,8 +15,6 @@ class CorePostService {
     let batchSize = 2
     var timer = Timer()
 
-    var tmp: [NewMonster] = []
-
     init() {}
 
     // MARK: - get all data from DB

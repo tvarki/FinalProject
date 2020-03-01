@@ -14,7 +14,7 @@ struct Speed {
     let swim: Int?
     let climb: Int?
 
-    init(from: NewSpeed) {
+    init(from: DTOSpeed) {
         walk = from.walk
         fly = from.fly
         swim = from.swim

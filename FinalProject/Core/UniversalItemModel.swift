@@ -23,7 +23,7 @@ class UniversalItemModel {
         return createMonsterArrayFromDBArray(dbArray: favoriteArray)
     }
 
-    func addPostToDB(monster: [NewMonster]) {
+    func addPostToDB(monster: [DTOMonster]) {
         var myObject: [NewDBMonster] = []
         monster.forEach { mstr in
             myObject.append(NewDBMonster(from: mstr))

@@ -23,7 +23,8 @@ class ViewController: UIViewController {
 
     var monsterFilters: [String] = []
 
-    let monsterService = MonsterService()
+    let monsterService = MonsterViewModel()
+
     @IBOutlet var tablePickerValue: UISegmentedControl!
 
     @IBOutlet var monsterTableVIew: UITableView!
@@ -142,9 +143,7 @@ extension ViewController: UITableViewDelegate {
     func checkUncheck(type: UITableViewCell.AccessoryType, indexPath: IndexPath) {
         if type == .checkmark {
             monsterService.setFaforite(forIndex: indexPath.row, value: true)
-            //            self.talantModel?.getTalant(at: indexPath.row)?.setIsChecked(isChecked: true)
         } else {
-            //            self.talantModel?.getTalant(at: indexPath.row)?.setIsChecked(isChecked: false)
             monsterService.setFaforite(forIndex: indexPath.row, value: false)
             if tablePickerValue.selectedSegmentIndex == 1 {
                 monsterTableVIew.beginUpdates()
@@ -217,15 +216,13 @@ extension ViewController: ModelUpdating {
         refreshControl.endRefreshing()
         makeAlert(title: "Attention", text: "Error while work with network \n \(error)")
 
-        monsterService.updateFromDB()
+//        monsterService.updateFromDB()
         monsterTableVIew.reloadData()
     }
 
     func updateModel() {
-        DispatchQueue.main.async {
-            self.refreshControl.endRefreshing()
-            self.monsterTableVIew.reloadData()
-        }
+        refreshControl.endRefreshing()
+        monsterTableVIew.reloadData()
     }
 }
 

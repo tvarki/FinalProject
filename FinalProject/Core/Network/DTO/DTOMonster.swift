@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NewMonster: Codable {
+struct DTOMonster: Codable {
     let slug: String
     let name: String
     let size: String
@@ -20,7 +20,7 @@ struct NewMonster: Codable {
     let armor_desc: String?
     let hit_points: Int
     let hit_dice: String
-    let speed: NewSpeed
+    let speed: DTOSpeed
     let strength: Int
     let dexterity: Int
     let constitution: Int
@@ -46,11 +46,11 @@ struct NewMonster: Codable {
     let languages: String
     let challenge_rating: String?
 
-    let special_abilities: JSONAny
-    let actions: JSONAny
+    let special_abilities: DTOJSONAny
+    let actions: DTOJSONAny
     let legendary_desc: String?
 
-    let legendary_actions: JSONAny
+    let legendary_actions: DTOJSONAny
 
     let spell_list: [String]
 

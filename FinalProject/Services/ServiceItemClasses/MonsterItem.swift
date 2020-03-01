@@ -56,7 +56,7 @@ class MonsterItem {
     let img_main: String?
     var isFavorite: Bool = false
 
-    init(from: NewMonster) {
+    init(from: DTOMonster) {
         slug = from.slug
         name = from.name
         size = from.size
@@ -154,7 +154,7 @@ class MonsterItem {
         spell_list = tmp_spell_list
     }
 
-    static func castAnyObjectToActions(action: JSONAny) -> [Actions] {
+    static func castAnyObjectToActions(action: DTOJSONAny) -> [Actions] {
         var tmp: [Actions]?
         tmp = action.value as? [Actions]
         if tmp != nil {

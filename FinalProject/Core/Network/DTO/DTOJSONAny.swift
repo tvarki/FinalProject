@@ -8,12 +8,12 @@
 
 import Foundation
 
-class JSONAny: Codable {
+class DTOJSONAny: Codable {
     public let value: Any
 
     static func decodingError(forCodingPath codingPath: [CodingKey]) -> DecodingError {
         let context = DecodingError.Context(codingPath: codingPath, debugDescription: "Cannot decode JSONAny")
-        return DecodingError.typeMismatch(JSONAny.self, context)
+        return DecodingError.typeMismatch(DTOJSONAny.self, context)
     }
 
     static func encodingError(forValue value: Any, codingPath: [CodingKey]) -> EncodingError {
@@ -35,7 +35,7 @@ class JSONAny: Codable {
         if let value = try? container.decode(String.self) {
             return value
         }
-        if let value = try? container.decode(NewActions.self) {
+        if let value = try? container.decode(DTOActions.self) {
             return value
         }
 
@@ -87,20 +87,20 @@ class JSONAny: Codable {
 
     public required init(from decoder: Decoder) throws {
         if var arrayContainer = try? decoder.unkeyedContainer() {
-            value = try JSONAny.decodeArray(from: &arrayContainer)
+            value = try DTOJSONAny.decodeArray(from: &arrayContainer)
         } else {
             let container = try decoder.singleValueContainer()
-            value = try JSONAny.decode(from: container)
+            value = try DTOJSONAny.decode(from: container)
         }
     }
 
     public func encode(to encoder: Encoder) throws {
         if let arr = value as? [Any] {
             var container = encoder.unkeyedContainer()
-            try JSONAny.encode(to: &container, array: arr)
+            try DTOJSONAny.encode(to: &container, array: arr)
         } else {
             var container = encoder.singleValueContainer()
-            try JSONAny.encode(to: &container, value: value)
+            try DTOJSONAny.encode(to: &container, value: value)
         }
     }
 }

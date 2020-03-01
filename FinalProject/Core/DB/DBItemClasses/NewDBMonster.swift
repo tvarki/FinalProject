@@ -65,7 +65,7 @@ class NewDBMonster: Object, MyDBObject {
         return "name"
     }
 
-    init(from: NewMonster) {
+    init(from: DTOMonster) {
         let special_abilities = List<NewDBActions>()
         let tmp = NewDBMonster.castAnyObjectToNewDBActions(action: from.special_abilities)
         tmp.forEach { action in special_abilities.append(NewDBActions(from: action)) }
@@ -224,9 +224,9 @@ class NewDBMonster: Object, MyDBObject {
         return res
     }
 
-    static func castAnyObjectToNewDBActions(action: JSONAny) -> List<NewDBActions> {
-        var tmp: [NewActions]?
-        tmp = action.value as? [NewActions]
+    static func castAnyObjectToNewDBActions(action: DTOJSONAny) -> List<NewDBActions> {
+        var tmp: [DTOActions]?
+        tmp = action.value as? [DTOActions]
         let result = List<NewDBActions>()
         if tmp != nil {
             tmp!.forEach { action in

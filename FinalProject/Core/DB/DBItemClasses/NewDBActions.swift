@@ -32,7 +32,7 @@ class NewDBActions: Object {
         damage_dice = from.damage_dice
     }
 
-    init(from: NewActions) {
+    init(from: DTOActions) {
         name = from.name
         desc = from.desc
         attack_bonus.value = from.attack_bonus

@@ -1,5 +1,5 @@
 //
-//  NewCommonReq.swift
+//  NewAction.swift
 //  FinalProject
 //
 //  Created by Дмитрий Яковлев on 28.02.2020.
@@ -8,9 +8,10 @@
 
 import Foundation
 
-struct NewCommonReq: Codable {
-    let count: Int
-    let next: String?
-    let previous: String?
-    let results: [NewMonster]
+struct DTOActions: Codable {
+    let name: String
+    let desc: String
+    let attack_bonus: Int?
+    let damage_dice: String?
+    let damage_bonus: Int?
 }
