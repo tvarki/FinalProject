@@ -757,6 +757,9 @@ internal class ObjectUtil {
             if let objcProp = class_getProperty(cls, label) {
                 var count: UInt32 = 0
                 let attrs = property_copyAttributeList(objcProp, &count)!
+                defer {
+                    free(attrs)
+                }
                 var computed = true
                 for i in 0 ..< Int(count) {
                     let attr = attrs[i]

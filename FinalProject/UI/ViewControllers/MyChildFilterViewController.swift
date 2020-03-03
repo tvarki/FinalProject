@@ -25,7 +25,7 @@ class MyChildFilterViewController: UIViewController {
         cv.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
     }
 
-    var monsterFilters: [String]?
+    var filters: [String]?
     let cellID = "MonsterTypeCell"
 
     func reloadData() {
@@ -33,15 +33,15 @@ class MyChildFilterViewController: UIViewController {
     }
 
     func getCount() -> Int {
-        return monsterFilters?.count ?? 0
+        return filters?.count ?? 0
     }
 
     func getList() -> [String] {
-        return monsterFilters ?? []
+        return filters ?? []
     }
 
     func addType(type: String) {
-        monsterFilters?.append(type)
+        filters?.append(type)
         cv.reloadData()
     }
 }
@@ -50,7 +50,7 @@ extension MyChildFilterViewController: UICollectionViewDelegate {}
 
 extension MyChildFilterViewController: UICollectionViewDataSource {
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        guard let monsterFilters = monsterFilters else { return 0 }
+        guard let monsterFilters = filters else { return 0 }
         return monsterFilters.count
     }
 
@@ -58,21 +58,20 @@ extension MyChildFilterViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
             as? MonsterTypeCell else { return UICollectionViewCell() }
 
-        guard let monsterFilters = monsterFilters else { return UICollectionViewCell() }
+        guard let filters = filters else { return UICollectionViewCell() }
 
-        cell.setup(type: monsterFilters[indexPath.row])
+        cell.setup(type: filters[indexPath.row])
         cell.setSelected()
-//        cell.setup(monster: mtArray[indexPath.row])
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
     }
 
     @objc func tap(_ sender: UITapGestureRecognizer) {
-        guard monsterFilters != nil else { return }
+        guard filters != nil else { return }
         let location = sender.location(in: cv)
         guard let indexPath = cv.indexPathForItem(at: location) else { return }
-        let type = monsterFilters![indexPath.row]
-        monsterFilters!.remove(at: indexPath.row)
+        let type = filters![indexPath.row]
+        filters!.remove(at: indexPath.row)
 
         cv.reloadData()
         delegate?.tap(type: type)

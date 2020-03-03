@@ -1,13 +1,13 @@
 PODS:
-  - Realm (4.3.1):
-    - Realm/Headers (= 4.3.1)
-  - Realm/Headers (4.3.1)
-  - RealmSwift (4.3.1):
-    - Realm (= 4.3.1)
-  - SwiftFormat (0.44.0):
-    - SwiftFormat/Core (= 0.44.0)
-  - SwiftFormat/Core (0.44.0)
-  - SwiftLint (0.38.2)
+  - Realm (4.3.2):
+    - Realm/Headers (= 4.3.2)
+  - Realm/Headers (4.3.2)
+  - RealmSwift (4.3.2):
+    - Realm (= 4.3.2)
+  - SwiftFormat (0.44.4):
+    - SwiftFormat/Core (= 0.44.4)
+  - SwiftFormat/Core (0.44.4)
+  - SwiftLint (0.39.1)
 
 DEPENDENCIES:
   - RealmSwift
@@ -22,11 +22,11 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Realm: 31dc40934081ef740f60feedc46d88473cbfeb40
-  RealmSwift: b5199e9a41f67b99f51acf6874a6166f5fbe93d1
-  SwiftFormat: 180a4d17bcfa2c9f61b202dac7dddd2087ff920a
-  SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
+  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
+  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  SwiftFormat: 8b3c6b69454305a61c221355095f62dacc0811bf
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: d3fbbb09688ac09c728003b3627d4d88c5086383
+PODFILE CHECKSUM: 9614e31cda77553980c55270b69d38fc217255b0
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.0

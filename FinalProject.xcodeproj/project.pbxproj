@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AAB9AB480F3CF3FC49DE18C /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D6659C62BCC7582572EDBF /* Pods_FinalProject.framework */; };
+		9A0CB50C5E3DB4374B692D04 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CB45F19EC4596CCC0DAD0E /* Pods_FinalProject.framework */; };
 		AF353C5023D1AFCF006F72A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C4F23D1AFCF006F72A1 /* AppDelegate.swift */; };
 		AF353C5223D1AFCF006F72A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C5123D1AFCF006F72A1 /* SceneDelegate.swift */; };
-		AF353C5423D1AFCF006F72A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C5323D1AFCF006F72A1 /* ViewController.swift */; };
+		AF353C5423D1AFCF006F72A1 /* MonsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C5323D1AFCF006F72A1 /* MonsterViewController.swift */; };
 		AF353C5723D1AFCF006F72A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF353C5523D1AFCF006F72A1 /* Main.storyboard */; };
 		AF353C5923D1AFD6006F72A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF353C5823D1AFD6006F72A1 /* Assets.xcassets */; };
 		AF353C5C23D1AFD6006F72A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF353C5A23D1AFD6006F72A1 /* LaunchScreen.storyboard */; };
@@ -27,13 +27,11 @@
 		AF37152323DF4C6E00D357FE /* ListExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37152223DF4C6E00D357FE /* ListExtension.swift */; };
 		AF5B17862407000F008F4668 /* JSONAnyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B17852407000F008F4668 /* JSONAnyDTO.swift */; };
 		AF5B17912407A413008F4668 /* MyChildFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B17902407A413008F4668 /* MyChildFilterViewController.swift */; };
-		AF5B17942407BA34008F4668 /* NewFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B17922407BA34008F4668 /* NewFilterViewController.swift */; };
 		AF5F2EA823F690F800286229 /* MonsterTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5F2EA623F690F800286229 /* MonsterTypeCell.swift */; };
 		AF5F2EA923F690F800286229 /* MonsterTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */; };
-		AF8F13D32407E1E0003BDDB5 /* SingleFilterPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F13D22407E1E0003BDDB5 /* SingleFilterPickerViewController.swift */; };
 		AFACEAD62408FCB100F9FBD5 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEAD52408FCB100F9FBD5 /* Actions.swift */; };
 		AFACEAD82408FCCA00F9FBD5 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEAD72408FCCA00F9FBD5 /* Speed.swift */; };
-		AFACEADB2408FDD700F9FBD5 /* CommonReqDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEADA2408FDD700F9FBD5 /* CommonReqDTO.swift */; };
+		AFACEADB2408FDD700F9FBD5 /* CommonMonsterReqDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEADA2408FDD700F9FBD5 /* CommonMonsterReqDTO.swift */; };
 		AFACEADD2408FDF000F9FBD5 /* SpeedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEADC2408FDF000F9FBD5 /* SpeedDTO.swift */; };
 		AFACEADF2408FE1300F9FBD5 /* ActionsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEADE2408FE1300F9FBD5 /* ActionsDTO.swift */; };
 		AFACEAE22408FE6600F9FBD5 /* NewDBSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACEAE12408FE6600F9FBD5 /* NewDBSpeed.swift */; };
@@ -42,19 +40,45 @@
 		AFB8F78B240C5699007F09AB /* MonsterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB8F78A240C5699007F09AB /* MonsterService.swift */; };
 		AFC61D0B24085F3900BB3CA4 /* MonsterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC61D0A24085F3900BB3CA4 /* MonsterItem.swift */; };
 		AFC91D9F240C6FAD000FA92D /* MonsterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91D9E240C6FAD000FA92D /* MonsterViewModel.swift */; };
+		AFC91DA2240CE2B2000FA92D /* MagicItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DA1240CE2B2000FA92D /* MagicItemViewController.swift */; };
+		AFC91DA4240CE959000FA92D /* MagicItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DA3240CE959000FA92D /* MagicItemViewModel.swift */; };
+		AFC91DA6240CE9EF000FA92D /* MagicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DA5240CE9EF000FA92D /* MagicItem.swift */; };
+		AFC91DA8240CEB1C000FA92D /* MagicItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DA7240CEB1C000FA92D /* MagicItemDTO.swift */; };
+		AFC91DAA240CEB9E000FA92D /* NewDBMagicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DA9240CEB9E000FA92D /* NewDBMagicItem.swift */; };
+		AFC91DAC240CEEC1000FA92D /* MagicItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DAB240CEEC1000FA92D /* MagicItemService.swift */; };
+		AFC91DAE240CF050000FA92D /* CoreMagicItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DAD240CF050000FA92D /* CoreMagicItemModel.swift */; };
+		AFC91DB0240CF2C3000FA92D /* CommonMagicItemReqDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DAF240CF2C3000FA92D /* CommonMagicItemReqDTO.swift */; };
+		AFC91DB2240D1D66000FA92D /* QuickSearchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DB1240D1D66000FA92D /* QuickSearchPickerView.swift */; };
 		AFCC201C24093273004E1E37 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC201B24093273004E1E37 /* FilterViewController.swift */; };
-		AFD384CE2408E9020054001E /* UniversalItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD384CD2408E9020054001E /* UniversalItemModel.swift */; };
-		AFE0F6E32407F0C0000D6780 /* TripleFilterPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE0F6E22407F0C0000D6780 /* TripleFilterPickerViewController.swift */; };
+		AFD384CE2408E9020054001E /* CoreMonsterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD384CD2408E9020054001E /* CoreMonsterModel.swift */; };
+		AFF27087240D2385005BF754 /* EnumMonsterParametrs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF27086240D2385005BF754 /* EnumMonsterParametrs.swift */; };
+		AFF27089240D34A6005BF754 /* EnumMagicItemParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF27088240D34A6005BF754 /* EnumMagicItemParams.swift */; };
+		AFF2708B240D7C09005BF754 /* Pods_FinalProject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0D6659C62BCC7582572EDBF /* Pods_FinalProject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AFF2708C240D7C09005BF754 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AFF2708B240D7C09005BF754 /* Pods_FinalProject.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0F4C49A4FE2B449D30AE4655 /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
+		91CB45F19EC4596CCC0DAD0E /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93928ACA7AD0B2088D070D3D /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 		A0D6659C62BCC7582572EDBF /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF353C4C23D1AFCF006F72A1 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF353C4F23D1AFCF006F72A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF353C5123D1AFCF006F72A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF353C5323D1AFCF006F72A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF353C5323D1AFCF006F72A1 /* MonsterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterViewController.swift; sourceTree = "<group>"; };
 		AF353C5623D1AFCF006F72A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF353C5823D1AFD6006F72A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF353C5B23D1AFD6006F72A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,13 +96,11 @@
 		AF37152223DF4C6E00D357FE /* ListExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExtension.swift; sourceTree = "<group>"; };
 		AF5B17852407000F008F4668 /* JSONAnyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAnyDTO.swift; sourceTree = "<group>"; };
 		AF5B17902407A413008F4668 /* MyChildFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChildFilterViewController.swift; sourceTree = "<group>"; };
-		AF5B17922407BA34008F4668 /* NewFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFilterViewController.swift; sourceTree = "<group>"; };
 		AF5F2EA623F690F800286229 /* MonsterTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterTypeCell.swift; sourceTree = "<group>"; };
 		AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonsterTypeCell.xib; sourceTree = "<group>"; };
-		AF8F13D22407E1E0003BDDB5 /* SingleFilterPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleFilterPickerViewController.swift; sourceTree = "<group>"; };
 		AFACEAD52408FCB100F9FBD5 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		AFACEAD72408FCCA00F9FBD5 /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
-		AFACEADA2408FDD700F9FBD5 /* CommonReqDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonReqDTO.swift; sourceTree = "<group>"; };
+		AFACEADA2408FDD700F9FBD5 /* CommonMonsterReqDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMonsterReqDTO.swift; sourceTree = "<group>"; };
 		AFACEADC2408FDF000F9FBD5 /* SpeedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedDTO.swift; sourceTree = "<group>"; };
 		AFACEADE2408FE1300F9FBD5 /* ActionsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsDTO.swift; sourceTree = "<group>"; };
 		AFACEAE12408FE6600F9FBD5 /* NewDBSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDBSpeed.swift; sourceTree = "<group>"; };
@@ -87,9 +109,19 @@
 		AFB8F78A240C5699007F09AB /* MonsterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterService.swift; sourceTree = "<group>"; };
 		AFC61D0A24085F3900BB3CA4 /* MonsterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterItem.swift; sourceTree = "<group>"; };
 		AFC91D9E240C6FAD000FA92D /* MonsterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterViewModel.swift; sourceTree = "<group>"; };
+		AFC91DA1240CE2B2000FA92D /* MagicItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicItemViewController.swift; sourceTree = "<group>"; };
+		AFC91DA3240CE959000FA92D /* MagicItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicItemViewModel.swift; sourceTree = "<group>"; };
+		AFC91DA5240CE9EF000FA92D /* MagicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicItem.swift; sourceTree = "<group>"; };
+		AFC91DA7240CEB1C000FA92D /* MagicItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicItemDTO.swift; sourceTree = "<group>"; };
+		AFC91DA9240CEB9E000FA92D /* NewDBMagicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDBMagicItem.swift; sourceTree = "<group>"; };
+		AFC91DAB240CEEC1000FA92D /* MagicItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicItemService.swift; sourceTree = "<group>"; };
+		AFC91DAD240CF050000FA92D /* CoreMagicItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMagicItemModel.swift; sourceTree = "<group>"; };
+		AFC91DAF240CF2C3000FA92D /* CommonMagicItemReqDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMagicItemReqDTO.swift; sourceTree = "<group>"; };
+		AFC91DB1240D1D66000FA92D /* QuickSearchPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearchPickerView.swift; sourceTree = "<group>"; };
 		AFCC201B24093273004E1E37 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
-		AFD384CD2408E9020054001E /* UniversalItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalItemModel.swift; sourceTree = "<group>"; };
-		AFE0F6E22407F0C0000D6780 /* TripleFilterPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleFilterPickerViewController.swift; sourceTree = "<group>"; };
+		AFD384CD2408E9020054001E /* CoreMonsterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMonsterModel.swift; sourceTree = "<group>"; };
+		AFF27086240D2385005BF754 /* EnumMonsterParametrs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMonsterParametrs.swift; sourceTree = "<group>"; };
+		AFF27088240D34A6005BF754 /* EnumMagicItemParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMagicItemParams.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AAB9AB480F3CF3FC49DE18C /* Pods_FinalProject.framework in Frameworks */,
+				9A0CB50C5E3DB4374B692D04 /* Pods_FinalProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +148,7 @@
 		2C5612C7367C268AB5E24FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A0D6659C62BCC7582572EDBF /* Pods_FinalProject.framework */,
+				91CB45F19EC4596CCC0DAD0E /* Pods_FinalProject.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -149,7 +181,6 @@
 				AFC91D9B240C6E94000FA92D /* Factory */,
 				AF353C4F23D1AFCF006F72A1 /* AppDelegate.swift */,
 				AF353C5123D1AFCF006F72A1 /* SceneDelegate.swift */,
-				AF353C5523D1AFCF006F72A1 /* Main.storyboard */,
 				AF353C5823D1AFD6006F72A1 /* Assets.xcassets */,
 				AF353C5A23D1AFD6006F72A1 /* LaunchScreen.storyboard */,
 				AF353C5D23D1AFD6006F72A1 /* Info.plist */,
@@ -172,8 +203,11 @@
 			isa = PBXGroup;
 			children = (
 				AFC61D0A24085F3900BB3CA4 /* MonsterItem.swift */,
+				AFC91DA5240CE9EF000FA92D /* MagicItem.swift */,
 				AFACEAD52408FCB100F9FBD5 /* Actions.swift */,
 				AFACEAD72408FCCA00F9FBD5 /* Speed.swift */,
+				AFF27086240D2385005BF754 /* EnumMonsterParametrs.swift */,
+				AFF27088240D34A6005BF754 /* EnumMagicItemParams.swift */,
 			);
 			path = ServiceItemClasses;
 			sourceTree = "<group>";
@@ -184,8 +218,10 @@
 				AF5B17852407000F008F4668 /* JSONAnyDTO.swift */,
 				AF353C6523D20459006F72A1 /* MonsterDTO.swift */,
 				AFACEADC2408FDF000F9FBD5 /* SpeedDTO.swift */,
-				AFACEADA2408FDD700F9FBD5 /* CommonReqDTO.swift */,
+				AFACEADA2408FDD700F9FBD5 /* CommonMonsterReqDTO.swift */,
 				AFACEADE2408FE1300F9FBD5 /* ActionsDTO.swift */,
+				AFC91DA7240CEB1C000FA92D /* MagicItemDTO.swift */,
+				AFC91DAF240CF2C3000FA92D /* CommonMagicItemReqDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -196,6 +232,7 @@
 				AF37151523DDFEDE00D357FE /* NewDBMonster.swift */,
 				AFACEAE12408FE6600F9FBD5 /* NewDBSpeed.swift */,
 				AFACEAE32408FE8800F9FBD5 /* NewDBActions.swift */,
+				AFC91DA9240CEB9E000FA92D /* NewDBMagicItem.swift */,
 			);
 			path = DBItemClasses;
 			sourceTree = "<group>";
@@ -203,12 +240,11 @@
 		AFC61D072408570600BB3CA4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AF5B17922407BA34008F4668 /* NewFilterViewController.swift */,
-				AF8F13D22407E1E0003BDDB5 /* SingleFilterPickerViewController.swift */,
-				AFE0F6E22407F0C0000D6780 /* TripleFilterPickerViewController.swift */,
 				AF5B17902407A413008F4668 /* MyChildFilterViewController.swift */,
-				AF353C5323D1AFCF006F72A1 /* ViewController.swift */,
 				AFCC201B24093273004E1E37 /* FilterViewController.swift */,
+				AFC91DB1240D1D66000FA92D /* QuickSearchPickerView.swift */,
+				AF353C5323D1AFCF006F72A1 /* MonsterViewController.swift */,
+				AFC91DA1240CE2B2000FA92D /* MagicItemViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,9 +262,10 @@
 			isa = PBXGroup;
 			children = (
 				AFACEAD42408FC8000F9FBD5 /* ServiceItemClasses */,
-				AFB8F78A240C5699007F09AB /* MonsterService.swift */,
 				AF353C6723D2526C006F72A1 /* NetRequestsService.swift */,
 				AFACEAE5240907E900F9FBD5 /* UDService.swift */,
+				AFB8F78A240C5699007F09AB /* MonsterService.swift */,
+				AFC91DAB240CEEC1000FA92D /* MagicItemService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -236,7 +273,8 @@
 		AFC61D0C2408E64200BB3CA4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AFD384CD2408E9020054001E /* UniversalItemModel.swift */,
+				AFD384CD2408E9020054001E /* CoreMonsterModel.swift */,
+				AFC91DAD240CF050000FA92D /* CoreMagicItemModel.swift */,
 				AFC61D0D2408E6DB00BB3CA4 /* Network */,
 				AFC61D0E2408E75100BB3CA4 /* DB */,
 				AF37151123DDFD3200D357FE /* CorePostService.swift */,
@@ -265,7 +303,8 @@
 		AFC91D9A240C6E71000FA92D /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				AFC91D9E240C6FAD000FA92D /* MonsterViewModel.swift */,
+				AF353C5523D1AFCF006F72A1 /* Main.storyboard */,
+				AFC91DA0240CDCC1000FA92D /* VIewModels */,
 				AFC61D082408574300BB3CA4 /* XIB */,
 				AFC61D072408570600BB3CA4 /* ViewControllers */,
 			);
@@ -280,6 +319,15 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		AFC91DA0240CDCC1000FA92D /* VIewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AFC91D9E240C6FAD000FA92D /* MonsterViewModel.swift */,
+				AFC91DA3240CE959000FA92D /* MagicItemViewModel.swift */,
+			);
+			path = VIewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,9 +339,10 @@
 				AF353C4823D1AFCF006F72A1 /* Sources */,
 				AF353C4923D1AFCF006F72A1 /* Frameworks */,
 				AF353C4A23D1AFCF006F72A1 /* Resources */,
-				2CD889D69FC34545D5EA3E6E /* [CP] Embed Pods Frameworks */,
 				AFE0F6E5240840E5000D6780 /* ShellScript */,
 				AFE0F6E424083EBE000D6780 /* ShellScript */,
+				AFF2708C240D7C09005BF754 /* Embed Frameworks */,
+				4E88B9430F5E014F4F9D52DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -374,7 +423,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2CD889D69FC34545D5EA3E6E /* [CP] Embed Pods Frameworks */ = {
+		4E88B9430F5E014F4F9D52DF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -388,7 +437,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh\"\n\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AFE0F6E424083EBE000D6780 /* ShellScript */ = {
@@ -432,39 +481,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC91DA4240CE959000FA92D /* MagicItemViewModel.swift in Sources */,
 				AF37151C23DF4B1500D357FE /* StringExtensions.swift in Sources */,
-				AFD384CE2408E9020054001E /* UniversalItemModel.swift in Sources */,
+				AFC91DA2240CE2B2000FA92D /* MagicItemViewController.swift in Sources */,
+				AFD384CE2408E9020054001E /* CoreMonsterModel.swift in Sources */,
 				AFACEAE6240907E900F9FBD5 /* UDService.swift in Sources */,
 				AF37151623DDFEDE00D357FE /* NewDBMonster.swift in Sources */,
 				AFACEAD82408FCCA00F9FBD5 /* Speed.swift in Sources */,
+				AFC91DAA240CEB9E000FA92D /* NewDBMagicItem.swift in Sources */,
 				AF353C6623D20459006F72A1 /* MonsterDTO.swift in Sources */,
 				AF37151223DDFD3200D357FE /* CorePostService.swift in Sources */,
 				AF37151A23DF28E100D357FE /* SwiftClassFactory.swift in Sources */,
 				AF353C6823D2526D006F72A1 /* NetRequestsService.swift in Sources */,
 				AFC91D9F240C6FAD000FA92D /* MonsterViewModel.swift in Sources */,
+				AFC91DAE240CF050000FA92D /* CoreMagicItemModel.swift in Sources */,
 				AF37151423DDFE1D00D357FE /* DBManager.swift in Sources */,
+				AFC91DB0240CF2C3000FA92D /* CommonMagicItemReqDTO.swift in Sources */,
 				AFACEADF2408FE1300F9FBD5 /* ActionsDTO.swift in Sources */,
+				AFC91DA6240CE9EF000FA92D /* MagicItem.swift in Sources */,
 				AFACEAD62408FCB100F9FBD5 /* Actions.swift in Sources */,
 				AF5B17912407A413008F4668 /* MyChildFilterViewController.swift in Sources */,
-				AFACEADB2408FDD700F9FBD5 /* CommonReqDTO.swift in Sources */,
+				AFACEADB2408FDD700F9FBD5 /* CommonMonsterReqDTO.swift in Sources */,
 				AF5B17862407000F008F4668 /* JSONAnyDTO.swift in Sources */,
-				AF5B17942407BA34008F4668 /* NewFilterViewController.swift in Sources */,
 				AFACEAE22408FE6600F9FBD5 /* NewDBSpeed.swift in Sources */,
 				AFB8F78B240C5699007F09AB /* MonsterService.swift in Sources */,
-				AF353C5423D1AFCF006F72A1 /* ViewController.swift in Sources */,
+				AFF27089240D34A6005BF754 /* EnumMagicItemParams.swift in Sources */,
+				AF353C5423D1AFCF006F72A1 /* MonsterViewController.swift in Sources */,
 				AF37152323DF4C6E00D357FE /* ListExtension.swift in Sources */,
 				AFC61D0B24085F3900BB3CA4 /* MonsterItem.swift in Sources */,
+				AFF27087240D2385005BF754 /* EnumMonsterParametrs.swift in Sources */,
 				AF5F2EA823F690F800286229 /* MonsterTypeCell.swift in Sources */,
 				AFACEADD2408FDF000F9FBD5 /* SpeedDTO.swift in Sources */,
 				AF353C6423D1B0BE006F72A1 /* NetCore.swift in Sources */,
 				AF353C5023D1AFCF006F72A1 /* AppDelegate.swift in Sources */,
 				AFACEAE42408FE8800F9FBD5 /* NewDBActions.swift in Sources */,
 				AFCC201C24093273004E1E37 /* FilterViewController.swift in Sources */,
+				AFC91DB2240D1D66000FA92D /* QuickSearchPickerView.swift in Sources */,
 				AF353C5223D1AFCF006F72A1 /* SceneDelegate.swift in Sources */,
 				AF37152023DF4BB500D357FE /* UIViewControllerExtension.swift in Sources */,
-				AFE0F6E32407F0C0000D6780 /* TripleFilterPickerViewController.swift in Sources */,
-				AF8F13D32407E1E0003BDDB5 /* SingleFilterPickerViewController.swift in Sources */,
+				AFC91DA8240CEB1C000FA92D /* MagicItemDTO.swift in Sources */,
 				AF37151E23DF4B7400D357FE /* ColorExtension.swift in Sources */,
+				AFC91DAC240CEEC1000FA92D /* MagicItemService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,7 +666,9 @@
 			baseConfigurationReference = 93928ACA7AD0B2088D070D3D /* Pods-FinalProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42W9LQVSNE;
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -617,6 +676,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.FinalProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -627,7 +687,9 @@
 			baseConfigurationReference = 0F4C49A4FE2B449D30AE4655 /* Pods-FinalProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42W9LQVSNE;
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -635,6 +697,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.FinalProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

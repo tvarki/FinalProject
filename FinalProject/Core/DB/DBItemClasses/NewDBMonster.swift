@@ -14,8 +14,6 @@ import RealmSwift
 protocol MyDBObject: Object {
     dynamic var name: String { get set }
     dynamic var isFavorite: Bool { get set }
-    //    dynamic var mainLabel: String { get set }
-    func getCellData() -> [String]
 }
 
 class NewDBMonster: Object, MyDBObject {
@@ -209,20 +207,19 @@ class NewDBMonster: Object, MyDBObject {
 
     // MARK: - DBMonster.toString()
 
-    func getCellData() -> [String] {
-        var res: [String] = []
-        let name = "\(self.name)"
-//        let index = "\(self.index)"
-        let hp = "🩸: \(hit_points) 🛡: \(armor_class) 🎚: \(challenge_rating!)"
-        let ac = "AC: \(armor_class)"
-
-        res.append(name)
-//        res.append(index)
-        res.append(hp)
-        res.append(ac)
-
-        return res
-    }
+//
+//    func getCellData() -> [String] {
+//        var res: [String] = []
+//        let name = "\(self.name)"
+//        let hp = "🩸: \(hit_points) 🛡: \(armor_class) 🎚: \(challenge_rating!)"
+//        let ac = "AC: \(armor_class)"
+//
+//        res.append(name)
+//        res.append(hp)
+//        res.append(ac)
+//
+//        return res
+//    }
 
     static func castAnyObjectToNewDBActions(action: JSONAnyDTO) -> List<NewDBActions> {
         var tmp: [ActionsDTO]?

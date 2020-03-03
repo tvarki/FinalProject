@@ -15,12 +15,12 @@ protocol ModelUpdating: AnyObject {
 
 final class MonsterService {
     let requestService = NetRequestsService()
-    private var universalItemModel = UniversalItemModel()
+    private var coreMonsterModel = CoreMonsterModel()
 
     init() {}
 
     func start(completion: @escaping ([MonsterItem]) -> Void, fail: @escaping (String) -> Void) {
-        if updateFromDB(completion: completion) {
+        if !updateFromDB(completion: completion) {
             updatePostsFromInternet(completion: completion, fail: fail)
         }
     }
@@ -30,13 +30,13 @@ final class MonsterService {
     }
 
     func dawnloadNext(completion: @escaping ([MonsterItem]) -> Void, fail: @escaping (String) -> Void) {
-        let next = UDService.getFromUserDefaults(key: "NextArray")
+        let next = UDService.getFromUserDefaults(key: "NextMonsterArray")
         guard next != nil, next != "" else { return }
         updatePostsFromInternet(endPoint: next!, completion: completion, fail: fail)
     }
 
     @discardableResult func updateFromDB(completion: @escaping ([MonsterItem]) -> Void) -> Bool {
-        let tmp = universalItemModel.getAllMonster()
+        let tmp = coreMonsterModel.getAllMonster()
         if tmp.count > 0 {
             DispatchQueue.main.async {
                 completion(tmp)
@@ -58,7 +58,7 @@ final class MonsterService {
     }
 
     func setFaforite(item: MonsterItem) {
-        universalItemModel.changePostInDB(monster: item)
+        coreMonsterModel.changePostInDB(monster: item)
     }
 
     func getAllMonsterTypes(monsterArray: [MonsterItem]) -> [String] {
@@ -66,17 +66,17 @@ final class MonsterService {
     }
 
     func deleteAll() {
-        universalItemModel.deleteAllDB()
+        coreMonsterModel.deleteAllDB()
     }
 
     func downloadMonsterPosts(endPoint: String, topCompletion: @escaping ([MonsterItem]) -> Void, failure: @escaping (String) -> Void) {
         autoreleasepool {
             self.requestService.sendGetReqest(
-                type: SwiftClassFactory.getNewCommonRequestClass(),
+                type: SwiftClassFactory.getNewCommonMonsterRequestClass(),
                 endPoint: endPoint,
                 completion: { res in
-                    UDService.writeToUserDefaults(str: res.next ?? "", key: "NextArray")
-                    self.universalItemModel.addPostToDB(monster: res.results)
+                    UDService.writeToUserDefaults(str: res.next ?? "", key: "NextMonsterArray")
+                    self.coreMonsterModel.addPostToDB(monster: res.results)
                     self.updateFromDB(completion: topCompletion)
                 },
                 failure: { error in
