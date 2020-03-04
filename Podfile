@@ -8,6 +8,7 @@ target 'FinalProject' do
   # Pods for FinalProject
 
   source 'https://github.com/CocoaPods/Specs.git'
+  pod 'Realm'
   pod 'RealmSwift'
   pod 'SwiftLint'
   pod 'SwiftFormat'

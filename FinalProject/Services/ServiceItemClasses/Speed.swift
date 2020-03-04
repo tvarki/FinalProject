@@ -27,4 +27,21 @@ struct Speed {
         swim = from.swim.value
         climb = from.climb.value
     }
+
+    func toString() -> String {
+        var res = "Speed".makeBold().addLineBreaker()
+        if walk != nil {
+            res.append("Wolk: \(walk!)ft.".addLineBreaker())
+        }
+        if fly != nil {
+            res.append("Fly: \(fly!)ft.".addLineBreaker())
+        }
+        if swim != nil {
+            res.append("Swim: \(swim!)ft.".addLineBreaker())
+        }
+        if climb != nil {
+            res.append("Climb: \(climb!)ft.".addLineBreaker())
+        }
+        return res
+    }
 }

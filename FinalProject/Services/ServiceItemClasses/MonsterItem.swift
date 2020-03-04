@@ -171,20 +171,20 @@ class MonsterItem {
         return "🩸: \(hit_points) 🛡: \(armor_class) 🎚: \(challenge_rating!)"
     }
 
-//    func getCellData() -> [String] {
-//        var res: [String] = []
-//        let name = "\(self.name)"
-//        //        let index = "\(self.index)"
-//        let hp = "🩸: \(hit_points) 🛡: \(armor_class) 🎚: \(challenge_rating!)"
-//        let ac = "AC: \(armor_class)"
-//
-//        res.append(name)
-//        //        res.append(index)
-//        res.append(hp)
-//        res.append(ac)
-//
-//        return res
-//    }
+    //    func getCellData() -> [String] {
+    //        var res: [String] = []
+    //        let name = "\(self.name)"
+    //        //        let index = "\(self.index)"
+    //        let hp = "🩸: \(hit_points) 🛡: \(armor_class) 🎚: \(challenge_rating!)"
+    //        let ac = "AC: \(armor_class)"
+    //
+    //        res.append(name)
+    //        //        res.append(index)
+    //        res.append(hp)
+    //        res.append(ac)
+    //
+    //        return res
+    //    }
 
     func toString() -> String {
         var res = ""
@@ -204,6 +204,28 @@ class MonsterItem {
 
         let lb = "".addLineBreaker()
 
+        let descr = getDescription()
+
+        res.append(name)
+        res.append(sz)
+        res.append(type)
+        res.append(hp)
+        res.append(ac)
+        res.append(lb)
+        res.append(str)
+        res.append(dex)
+        res.append(con)
+        res.append(int)
+        res.append(wis)
+        res.append(char)
+        res.append(lb)
+        res.append(descr)
+
+        return res
+    }
+
+    func getDescription() -> String {
+        var res = ""
         let strSave = "Str Save: \(String(strength_save ?? 0).addLineBreaker())"
         let dexSave = "Dex Save: \(String(dexterity_save ?? 0).addLineBreaker())"
         let conSave = "Con Save: \(String(constitution_save ?? 0).addLineBreaker())"
@@ -229,19 +251,6 @@ class MonsterItem {
         if legendary_desc != nil { legendary_descr = "Legendary Description \(legendary_desc!)" }
         let legendaryActions = legendary_actions.toString(type: .LegendaryActions)
 
-        res.append(name)
-        res.append(sz)
-        res.append(type)
-        res.append(hp)
-        res.append(ac)
-        res.append(lb)
-        res.append(str)
-        res.append(dex)
-        res.append(con)
-        res.append(int)
-        res.append(wis)
-        res.append(char)
-        res.append(lb)
         res.append(strSave)
         res.append(dexSave)
         res.append(conSave)
@@ -249,11 +258,9 @@ class MonsterItem {
         res.append(wisSave)
         res.append(charSave)
         res.append(perseption)
-        res.append(lb)
         res.append(damage_vulnerabilities)
         res.append(damage_resistances)
         res.append(damage_immunities)
-        res.append(lb)
         res.append(senses)
         res.append(languages)
         res.append(challenge_rating)
@@ -262,7 +269,6 @@ class MonsterItem {
         res.append(legendary_descr)
         res.append(legendary_descr)
         res.append(legendaryActions)
-
         return res
     }
 }

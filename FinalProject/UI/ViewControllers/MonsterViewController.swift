@@ -59,7 +59,7 @@ class MonsterViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(
             withIdentifier: "FilterViewController") as? FilterViewController
-//            withIdentifier: "NewFilterViewController") as? NewFilterViewController
+        //            withIdentifier: "NewFilterViewController") as? NewFilterViewController
         else { return }
 
         viewController.allTypeFiltersStrings = monsterService.getAllMonsterTypes()
@@ -118,7 +118,7 @@ class MonsterViewController: UIViewController {
 
     @objc private func refreshData(_: UIRefreshControl) {
         if monsterFilters.count == 0 {
-//            monsterService.clearMonstersArray()
+            //            monsterService.clearMonstersArray()
             monsterService.deleteAll()
             monsterTableVIew.reloadData()
             monsterService.updatePostsFromInternet()
@@ -137,7 +137,17 @@ extension MonsterViewController: UITableViewDelegate {
         guard let tmp = cell.textLabel?.text else { return }
 
         let item = monsterService.getPost(name: tmp)
-        makeAlert(title: monsterService.getName(of: indexPath.row), text: item?.toString() ?? "")
+        guard item != nil else { return }
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(
+            withIdentifier: "MyMonsterDetailViewController") as? MyMonsterDetailViewController
+        else { return }
+
+        viewController.setMonster(monster: item!)
+        navigationController?.pushViewController(viewController, animated: true)
+
+        //        makeAlert(title: monsterService.getName(of: indexPath.row), text: item?.toString() ?? "")
     }
 
     // MARK: - Swipe(right) action
@@ -205,7 +215,7 @@ extension MonsterViewController: UITableViewDataSource {
 
         let post = monsterService.getPost(index: indexPath.row)
 
-//        qSearchPicker.isHidden = true
+        //        qSearchPicker.isHidden = true
 
         if post.isFavorite {
             cell.accessoryType = .checkmark
@@ -240,7 +250,7 @@ extension MonsterViewController: ModelUpdating {
         refreshControl.endRefreshing()
         makeAlert(title: "Attention", text: "Error while work with network \n \(error)")
 
-//        monsterService.updateFromDB()
+        //        monsterService.updateFromDB()
         monsterTableVIew.reloadData()
     }
 

@@ -57,6 +57,12 @@ extension String {
     func addLineBreaker() -> String {
         return "\(self)<br>"
     }
+
+    func toAttributedText(font: String = "Arial", mySize: Int = 16, align: String = "left") -> NSAttributedString {
+        let myAttribute = [NSAttributedString.Key.foregroundColor: UIColor.blue]
+
+        return convertHtmlToAttributedStringWithCSS(font: UIFont(name: font, size: CGFloat(mySize)), csscolor: UIColor.darkGray.hexString(.RRGGBB), lineheight: 5, csstextalign: align) ?? NSAttributedString(string: "", attributes: myAttribute)
+    }
 }
 
 extension StringProtocol {

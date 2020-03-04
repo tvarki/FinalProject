@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AbilityScoreCollectionViewCell" customModule="FinalProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="104" height="82"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="104" height="82"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Raw-Lw-s4G">
+                        <rect key="frame" x="0.0" y="0.0" width="104" height="82"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="AS" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9od-Lb-mjG">
+                                <rect key="frame" x="5" y="5" width="94" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="VALUE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bp9-Jf-vYr">
+                                <rect key="frame" x="5" y="44" width="94" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9od-Lb-mjG" firstAttribute="top" secondItem="Raw-Lw-s4G" secondAttribute="top" constant="5" id="2se-wd-EOy"/>
+                            <constraint firstItem="Bp9-Jf-vYr" firstAttribute="leading" secondItem="Raw-Lw-s4G" secondAttribute="leading" constant="5" id="6UN-w5-Bbi"/>
+                            <constraint firstAttribute="trailing" secondItem="9od-Lb-mjG" secondAttribute="trailing" constant="5" id="d2j-wC-McH"/>
+                            <constraint firstItem="9od-Lb-mjG" firstAttribute="leading" secondItem="Raw-Lw-s4G" secondAttribute="leading" constant="5" id="gqD-BC-LDx"/>
+                            <constraint firstItem="Bp9-Jf-vYr" firstAttribute="top" secondItem="9od-Lb-mjG" secondAttribute="bottom" constant="5" id="kwP-Cw-G0Z"/>
+                            <constraint firstAttribute="trailing" secondItem="Bp9-Jf-vYr" secondAttribute="trailing" constant="5" id="u36-kC-KIV"/>
+                            <constraint firstAttribute="height" constant="82" id="wZd-nh-2Op"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Raw-Lw-s4G" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="25c-56-och"/>
+                <constraint firstItem="Raw-Lw-s4G" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YYK-o9-n23"/>
+                <constraint firstAttribute="trailing" secondItem="Raw-Lw-s4G" secondAttribute="trailing" id="gDm-fI-gQJ"/>
+                <constraint firstAttribute="bottom" secondItem="Raw-Lw-s4G" secondAttribute="bottom" id="hbi-Qy-qUT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="104" height="82"/>
+            <connections>
+                <outlet property="aScoreTextField" destination="9od-Lb-mjG" id="7in-KX-PRR"/>
+                <outlet property="valueTextField" destination="Bp9-Jf-vYr" id="0MF-Hx-1KZ"/>
+            </connections>
+            <point key="canvasLocation" x="176.81159420289856" y="118.52678571428571"/>
+        </collectionViewCell>
+    </objects>
+</document>

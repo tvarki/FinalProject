@@ -15,9 +15,5 @@ http://www.dnd5eapi.co/docs/
 
 Так же Реализован pullToRefresh, чтобы дописать новые данные с сервера
 
-архитектура следующая
-
-ViewContriller -> PostModel -> PostService -> DBManager 
-                                                                     \ -> RequestService -> NetModel
 
 

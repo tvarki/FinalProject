@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9A0CB50C5E3DB4374B692D04 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CB45F19EC4596CCC0DAD0E /* Pods_FinalProject.framework */; };
+		AF2EE561240F904400C57103 /* AbilityScoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2EE55F240F904400C57103 /* AbilityScoreCollectionViewCell.swift */; };
+		AF2EE562240F904400C57103 /* AbilityScoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2EE560240F904400C57103 /* AbilityScoreCollectionViewCell.xib */; };
+		AF2EE564240F960B00C57103 /* MyMonsterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2EE563240F960B00C57103 /* MyMonsterDetailViewController.swift */; };
+		AF2EE566240F964600C57103 /* MyAbilityScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2EE565240F964600C57103 /* MyAbilityScoreViewController.swift */; };
+		AF2EE568240F980E00C57103 /* AbilityScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2EE567240F980E00C57103 /* AbilityScore.swift */; };
 		AF353C5023D1AFCF006F72A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C4F23D1AFCF006F72A1 /* AppDelegate.swift */; };
 		AF353C5223D1AFCF006F72A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C5123D1AFCF006F72A1 /* SceneDelegate.swift */; };
 		AF353C5423D1AFCF006F72A1 /* MonsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF353C5323D1AFCF006F72A1 /* MonsterViewController.swift */; };
@@ -53,28 +58,18 @@
 		AFD384CE2408E9020054001E /* CoreMonsterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD384CD2408E9020054001E /* CoreMonsterModel.swift */; };
 		AFF27087240D2385005BF754 /* EnumMonsterParametrs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF27086240D2385005BF754 /* EnumMonsterParametrs.swift */; };
 		AFF27089240D34A6005BF754 /* EnumMagicItemParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF27088240D34A6005BF754 /* EnumMagicItemParams.swift */; };
-		AFF2708B240D7C09005BF754 /* Pods_FinalProject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0D6659C62BCC7582572EDBF /* Pods_FinalProject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		AFF2708C240D7C09005BF754 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				AFF2708B240D7C09005BF754 /* Pods_FinalProject.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0F4C49A4FE2B449D30AE4655 /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
 		91CB45F19EC4596CCC0DAD0E /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93928ACA7AD0B2088D070D3D /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 		A0D6659C62BCC7582572EDBF /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2EE55F240F904400C57103 /* AbilityScoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityScoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF2EE560240F904400C57103 /* AbilityScoreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbilityScoreCollectionViewCell.xib; sourceTree = "<group>"; };
+		AF2EE563240F960B00C57103 /* MyMonsterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMonsterDetailViewController.swift; sourceTree = "<group>"; };
+		AF2EE565240F964600C57103 /* MyAbilityScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAbilityScoreViewController.swift; sourceTree = "<group>"; };
+		AF2EE567240F980E00C57103 /* AbilityScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityScore.swift; sourceTree = "<group>"; };
 		AF353C4C23D1AFCF006F72A1 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF353C4F23D1AFCF006F72A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF353C5123D1AFCF006F72A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +148,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AF2EE557240E9B5900C57103 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A0D6659C62BCC7582572EDBF /* Pods_FinalProject.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		AF353C4323D1AFCF006F72A1 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +163,7 @@
 				AF353C4D23D1AFCF006F72A1 /* Products */,
 				120A595F528B104E605D7A68 /* Pods */,
 				2C5612C7367C268AB5E24FA8 /* Frameworks */,
+				AF2EE557240E9B5900C57103 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +206,7 @@
 		AFACEAD42408FC8000F9FBD5 /* ServiceItemClasses */ = {
 			isa = PBXGroup;
 			children = (
+				AF2EE567240F980E00C57103 /* AbilityScore.swift */,
 				AFC61D0A24085F3900BB3CA4 /* MonsterItem.swift */,
 				AFC91DA5240CE9EF000FA92D /* MagicItem.swift */,
 				AFACEAD52408FCB100F9FBD5 /* Actions.swift */,
@@ -245,6 +250,8 @@
 				AFC91DB1240D1D66000FA92D /* QuickSearchPickerView.swift */,
 				AF353C5323D1AFCF006F72A1 /* MonsterViewController.swift */,
 				AFC91DA1240CE2B2000FA92D /* MagicItemViewController.swift */,
+				AF2EE565240F964600C57103 /* MyAbilityScoreViewController.swift */,
+				AF2EE563240F960B00C57103 /* MyMonsterDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -254,6 +261,8 @@
 			children = (
 				AF5F2EA623F690F800286229 /* MonsterTypeCell.swift */,
 				AF5F2EA723F690F800286229 /* MonsterTypeCell.xib */,
+				AF2EE55F240F904400C57103 /* AbilityScoreCollectionViewCell.swift */,
+				AF2EE560240F904400C57103 /* AbilityScoreCollectionViewCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -341,7 +350,6 @@
 				AF353C4A23D1AFCF006F72A1 /* Resources */,
 				AFE0F6E5240840E5000D6780 /* ShellScript */,
 				AFE0F6E424083EBE000D6780 /* ShellScript */,
-				AFF2708C240D7C09005BF754 /* Embed Frameworks */,
 				4E88B9430F5E014F4F9D52DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -392,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF353C5C23D1AFD6006F72A1 /* LaunchScreen.storyboard in Resources */,
+				AF2EE562240F904400C57103 /* AbilityScoreCollectionViewCell.xib in Resources */,
 				AF353C5923D1AFD6006F72A1 /* Assets.xcassets in Resources */,
 				AF5F2EA923F690F800286229 /* MonsterTypeCell.xib in Resources */,
 				AF353C5723D1AFCF006F72A1 /* Main.storyboard in Resources */,
@@ -486,16 +495,19 @@
 				AFC91DA2240CE2B2000FA92D /* MagicItemViewController.swift in Sources */,
 				AFD384CE2408E9020054001E /* CoreMonsterModel.swift in Sources */,
 				AFACEAE6240907E900F9FBD5 /* UDService.swift in Sources */,
+				AF2EE564240F960B00C57103 /* MyMonsterDetailViewController.swift in Sources */,
 				AF37151623DDFEDE00D357FE /* NewDBMonster.swift in Sources */,
 				AFACEAD82408FCCA00F9FBD5 /* Speed.swift in Sources */,
 				AFC91DAA240CEB9E000FA92D /* NewDBMagicItem.swift in Sources */,
 				AF353C6623D20459006F72A1 /* MonsterDTO.swift in Sources */,
 				AF37151223DDFD3200D357FE /* CorePostService.swift in Sources */,
 				AF37151A23DF28E100D357FE /* SwiftClassFactory.swift in Sources */,
+				AF2EE568240F980E00C57103 /* AbilityScore.swift in Sources */,
 				AF353C6823D2526D006F72A1 /* NetRequestsService.swift in Sources */,
 				AFC91D9F240C6FAD000FA92D /* MonsterViewModel.swift in Sources */,
 				AFC91DAE240CF050000FA92D /* CoreMagicItemModel.swift in Sources */,
 				AF37151423DDFE1D00D357FE /* DBManager.swift in Sources */,
+				AF2EE566240F964600C57103 /* MyAbilityScoreViewController.swift in Sources */,
 				AFC91DB0240CF2C3000FA92D /* CommonMagicItemReqDTO.swift in Sources */,
 				AFACEADF2408FE1300F9FBD5 /* ActionsDTO.swift in Sources */,
 				AFC91DA6240CE9EF000FA92D /* MagicItem.swift in Sources */,
@@ -503,6 +515,7 @@
 				AF5B17912407A413008F4668 /* MyChildFilterViewController.swift in Sources */,
 				AFACEADB2408FDD700F9FBD5 /* CommonMonsterReqDTO.swift in Sources */,
 				AF5B17862407000F008F4668 /* JSONAnyDTO.swift in Sources */,
+				AF2EE561240F904400C57103 /* AbilityScoreCollectionViewCell.swift in Sources */,
 				AFACEAE22408FE6600F9FBD5 /* NewDBSpeed.swift in Sources */,
 				AFB8F78B240C5699007F09AB /* MonsterService.swift in Sources */,
 				AFF27089240D34A6005BF754 /* EnumMagicItemParams.swift in Sources */,
