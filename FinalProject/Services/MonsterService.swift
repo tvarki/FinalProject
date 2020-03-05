@@ -30,6 +30,7 @@ final class MonsterService {
     }
 
     func dawnloadNext(completion: @escaping ([MonsterItem]) -> Void, fail: @escaping (String) -> Void) {
+        checkOldUDString()
         let next = UDService.getFromUserDefaults(key: "NextMonsterArray")
         guard next != nil, next != "" else { return }
         updatePostsFromInternet(endPoint: next!, completion: completion, fail: fail)
@@ -44,6 +45,12 @@ final class MonsterService {
             return true
         }
         return false
+    }
+    
+    func checkOldUDString(){
+        let next = UDService.getFromUserDefaults(key: "NextArray")
+        guard next != nil else{ return }
+        UDService.writeToUserDefaults(str: next!, key: "NextMonsterArray")
     }
 
     func updateMonsterTypes(monsterArray: [MonsterItem]) -> [String] {

@@ -72,7 +72,7 @@ class MagicItem {
     }
 
     func getDetail() -> String {
-        return "🔎: \(rarity) 📌: \(type)"
+        return "🔎: \(rarity.firstUppercased) 📌: \(type.firstUppercased)"
     }
 
     func toString() -> String {

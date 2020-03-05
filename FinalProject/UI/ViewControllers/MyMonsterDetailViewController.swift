@@ -43,10 +43,10 @@ class MyMonsterDetailViewController: UIViewController {
 
     override func viewWillAppear(_: Bool) {
         monsterName.text = mstrName
-        monsterSize.text = "📏 Size: \(mstrSize.firstUppercased)"
-        monsterType.text = "📌 Type: \(mstrType.firstUppercased)"
-        monsterHP.attributedText = "🩸 HP: \(mstrHP)".toAttributedText(align: "center")
-        monsterAC.text = "🛡 AC: \(mstrAC)"
+        monsterSize.attributedText = "📏 Size: \(mstrSize.firstUppercased)".toAttributedText(align: "left")
+        monsterType.attributedText = "📌 Type: \(mstrType.firstUppercased)".toAttributedText(align: "left")
+        monsterHP.attributedText = "🩸 HP: \(mstrHP)".toAttributedText(align: "left")
+        monsterAC.attributedText = "🛡 AC: \(mstrAC)".toAttributedText(align: "left")
         monsterDescription.attributedText = mstrDesc.toAttributedText()
         monsterSpeed.attributedText = mstrSpeed.toAttributedText()
         abilityScoreViewController?.abilityScores = aScore
@@ -58,10 +58,10 @@ class MyMonsterDetailViewController: UIViewController {
 
     func setMonster(monster: MonsterItem) {
         mstrName = monster.name
-        mstrSize = monster.size
-        mstrType = monster.type
-        mstrHP = "\(String(monster.hit_points).makeBold().addLineBreaker())(\(monster.hit_dice))"
-        mstrAC = "\(monster.armor_class)"
+        mstrSize = monster.size.makeBold()
+        mstrType = monster.type.makeBold()
+        mstrHP = "\(String(monster.hit_points).makeBold().addLineBreaker())🎲(\(monster.hit_dice))"
+        mstrAC = "\(monster.armor_class)".makeBold()
         mstrDesc = "\(monster.getDescription())"
         mstrSpeed = monster.speed.toString()
 
