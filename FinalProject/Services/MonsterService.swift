@@ -46,10 +46,10 @@ final class MonsterService {
         }
         return false
     }
-    
-    func checkOldUDString(){
+
+    func checkOldUDString() {
         let next = UDService.getFromUserDefaults(key: "NextArray")
-        guard next != nil else{ return }
+        guard next != nil else { return }
         UDService.writeToUserDefaults(str: next!, key: "NextMonsterArray")
     }
 
