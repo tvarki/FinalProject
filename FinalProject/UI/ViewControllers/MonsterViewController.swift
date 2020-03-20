@@ -51,6 +51,7 @@ class MonsterViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
+        monsterFilters = typesCollectionViewCOntroller?.getList() ?? []
         search(str: searchBar?.text ?? "", filterList: monsterFilters, params: searchingParametr)
         setupViewVisibility()
     }

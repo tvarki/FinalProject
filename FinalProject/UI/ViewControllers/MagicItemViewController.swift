@@ -36,6 +36,7 @@ class MagicItemViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
+        magicItemFilters = typesCollectionViewCOntroller?.getList() ?? []
         search(str: searchBar?.text ?? "", filterList: magicItemFilters, params: searchingParametr)
         setupViewVisibility()
     }
