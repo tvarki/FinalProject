@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FilterTyped: AnyObject {
-    func tap(type: String)
+    func tap(type: String?)
 }
 
 class MyChildFilterViewController: UIViewController {
@@ -70,8 +70,8 @@ extension MyChildFilterViewController: UICollectionViewDataSource {
         guard filters != nil else { return }
         let location = sender.location(in: cv)
         guard let indexPath = cv.indexPathForItem(at: location) else { return }
-        let type = filters![indexPath.row]
-        filters!.remove(at: indexPath.row)
+        let type = filters?[indexPath.row]
+        filters?.remove(at: indexPath.row)
 
         cv.reloadData()
         delegate?.tap(type: type)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CoreMonsterModel {
+class MonsterServiceModel {
     let corePostService = CorePostService()
 
     func getAllMonster() -> [MonsterItem] {

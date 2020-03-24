@@ -51,11 +51,11 @@
 		AFC91DA8240CEB1C000FA92D /* MagicItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DA7240CEB1C000FA92D /* MagicItemDTO.swift */; };
 		AFC91DAA240CEB9E000FA92D /* NewDBMagicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DA9240CEB9E000FA92D /* NewDBMagicItem.swift */; };
 		AFC91DAC240CEEC1000FA92D /* MagicItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DAB240CEEC1000FA92D /* MagicItemService.swift */; };
-		AFC91DAE240CF050000FA92D /* CoreMagicItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DAD240CF050000FA92D /* CoreMagicItemModel.swift */; };
+		AFC91DAE240CF050000FA92D /* MagicItemServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DAD240CF050000FA92D /* MagicItemServiceModel.swift */; };
 		AFC91DB0240CF2C3000FA92D /* CommonMagicItemReqDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DAF240CF2C3000FA92D /* CommonMagicItemReqDTO.swift */; };
 		AFC91DB2240D1D66000FA92D /* QuickSearchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC91DB1240D1D66000FA92D /* QuickSearchPickerView.swift */; };
 		AFCC201C24093273004E1E37 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC201B24093273004E1E37 /* FilterViewController.swift */; };
-		AFD384CE2408E9020054001E /* CoreMonsterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD384CD2408E9020054001E /* CoreMonsterModel.swift */; };
+		AFD384CE2408E9020054001E /* MonsterServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD384CD2408E9020054001E /* MonsterServiceModel.swift */; };
 		AFF27087240D2385005BF754 /* EnumMonsterParametrs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF27086240D2385005BF754 /* EnumMonsterParametrs.swift */; };
 		AFF27089240D34A6005BF754 /* EnumMagicItemParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF27088240D34A6005BF754 /* EnumMagicItemParams.swift */; };
 /* End PBXBuildFile section */
@@ -110,11 +110,11 @@
 		AFC91DA7240CEB1C000FA92D /* MagicItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicItemDTO.swift; sourceTree = "<group>"; };
 		AFC91DA9240CEB9E000FA92D /* NewDBMagicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDBMagicItem.swift; sourceTree = "<group>"; };
 		AFC91DAB240CEEC1000FA92D /* MagicItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicItemService.swift; sourceTree = "<group>"; };
-		AFC91DAD240CF050000FA92D /* CoreMagicItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMagicItemModel.swift; sourceTree = "<group>"; };
+		AFC91DAD240CF050000FA92D /* MagicItemServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicItemServiceModel.swift; sourceTree = "<group>"; };
 		AFC91DAF240CF2C3000FA92D /* CommonMagicItemReqDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMagicItemReqDTO.swift; sourceTree = "<group>"; };
 		AFC91DB1240D1D66000FA92D /* QuickSearchPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearchPickerView.swift; sourceTree = "<group>"; };
 		AFCC201B24093273004E1E37 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
-		AFD384CD2408E9020054001E /* CoreMonsterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMonsterModel.swift; sourceTree = "<group>"; };
+		AFD384CD2408E9020054001E /* MonsterServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterServiceModel.swift; sourceTree = "<group>"; };
 		AFF27086240D2385005BF754 /* EnumMonsterParametrs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMonsterParametrs.swift; sourceTree = "<group>"; };
 		AFF27088240D34A6005BF754 /* EnumMagicItemParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMagicItemParams.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +203,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AF4117CB2429F1170024F079 /* ItemsServiceModel */ = {
+			isa = PBXGroup;
+			children = (
+				AFC91DAD240CF050000FA92D /* MagicItemServiceModel.swift */,
+				AFD384CD2408E9020054001E /* MonsterServiceModel.swift */,
+			);
+			path = ItemsServiceModel;
+			sourceTree = "<group>";
+		};
 		AFACEAD42408FC8000F9FBD5 /* ServiceItemClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				AFACEAD42408FC8000F9FBD5 /* ServiceItemClasses */,
+				AF4117CB2429F1170024F079 /* ItemsServiceModel */,
 				AF353C6723D2526C006F72A1 /* NetRequestsService.swift */,
 				AFACEAE5240907E900F9FBD5 /* UDService.swift */,
 				AFB8F78A240C5699007F09AB /* MonsterService.swift */,
@@ -282,8 +292,6 @@
 		AFC61D0C2408E64200BB3CA4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AFD384CD2408E9020054001E /* CoreMonsterModel.swift */,
-				AFC91DAD240CF050000FA92D /* CoreMagicItemModel.swift */,
 				AFC61D0D2408E6DB00BB3CA4 /* Network */,
 				AFC61D0E2408E75100BB3CA4 /* DB */,
 				AF37151123DDFD3200D357FE /* CorePostService.swift */,
@@ -493,7 +501,7 @@
 				AFC91DA4240CE959000FA92D /* MagicItemViewModel.swift in Sources */,
 				AF37151C23DF4B1500D357FE /* StringExtensions.swift in Sources */,
 				AFC91DA2240CE2B2000FA92D /* MagicItemViewController.swift in Sources */,
-				AFD384CE2408E9020054001E /* CoreMonsterModel.swift in Sources */,
+				AFD384CE2408E9020054001E /* MonsterServiceModel.swift in Sources */,
 				AFACEAE6240907E900F9FBD5 /* UDService.swift in Sources */,
 				AF2EE564240F960B00C57103 /* MyMonsterDetailViewController.swift in Sources */,
 				AF37151623DDFEDE00D357FE /* NewDBMonster.swift in Sources */,
@@ -505,7 +513,7 @@
 				AF2EE568240F980E00C57103 /* AbilityScore.swift in Sources */,
 				AF353C6823D2526D006F72A1 /* NetRequestsService.swift in Sources */,
 				AFC91D9F240C6FAD000FA92D /* MonsterViewModel.swift in Sources */,
-				AFC91DAE240CF050000FA92D /* CoreMagicItemModel.swift in Sources */,
+				AFC91DAE240CF050000FA92D /* MagicItemServiceModel.swift in Sources */,
 				AF37151423DDFE1D00D357FE /* DBManager.swift in Sources */,
 				AF2EE566240F964600C57103 /* MyAbilityScoreViewController.swift in Sources */,
 				AFC91DB0240CF2C3000FA92D /* CommonMagicItemReqDTO.swift in Sources */,

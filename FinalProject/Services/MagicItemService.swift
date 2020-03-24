@@ -10,7 +10,7 @@ import Foundation
 
 final class MagicItemService {
     let requestService = NetRequestsService()
-    private var coreMagicItemModel = CoreMagicItemModel()
+    private var coreMagicItemModel = MagicItemServiceModel()
 
     init() {}
 

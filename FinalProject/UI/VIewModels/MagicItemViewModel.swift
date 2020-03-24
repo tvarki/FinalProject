@@ -8,29 +8,32 @@
 
 import Foundation
 
+protocol ModelUpdating: AnyObject {
+    func updateModel()
+    func showError(error: String)
+}
+
 class MagicItemViewModel {
     private var isFavorite = false
-
     private var magicItemService = MagicItemService()
-
     private var magicItemArray: [MagicItem] = []
     private var searchMagicItemArray: [MagicItem] = []
-
     private var favoriteMagicItemArray: [MagicItem] = []
     private var searchFavoriteMagicItemArray: [MagicItem] = []
-
     private var monsterType: [String] = []
-
     private var searchString: String = ""
     private var searchFilterArray: [String] = []
-
     weak var delegate: ModelUpdating?
-
     private var emParams: EnumMagicItemParams = .name
 
     init() {
         magicItemService.start(
-            completion: comp, fail: fail
+            completion: { [weak self] items in
+                self?.comp(array: items)
+            },
+            fail: { [weak self] error in
+                self?.fail(error: error)
+            }
         )
     }
 
@@ -144,7 +147,6 @@ class MagicItemViewModel {
     }
 
     func setFaforite(forIndex: Int, value: Bool) {
-        //        print("Function: \(#function), line: \(#line)")
         let object: MagicItem
         if !isFavorite {
             object = magicItemArray[forIndex]
@@ -154,7 +156,6 @@ class MagicItemViewModel {
     }
 
     func getAllPosts() -> [MagicItem] {
-        //        print("Function: \(#function), line: \(#line)")
         if !isFavorite {
             return magicItemArray
         } else { return favoriteMagicItemArray }
@@ -187,7 +188,6 @@ class MagicItemViewModel {
     }
 
     func searchChanged(str: String, filterList: [String]) {
-        //        print("Function: \(#function), line: \(#line) monsterArray.count \(monsterArray.count)")
         if !isFavorite {
             fillSearchArray(str: str, filterList: filterList, allMagicItemArray: magicItemArray, array: &searchMagicItemArray)
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CoreMagicItemModel {
+class MagicItemServiceModel {
     let corePostService = CorePostService()
 
     func getAllMagicItem() -> [MagicItem] {

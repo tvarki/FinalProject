@@ -128,7 +128,7 @@ class MagicItemViewController: UIViewController {
 }
 
 extension MagicItemViewController: FilterTyped {
-    func tap(type _: String) {
+    func tap(type _: String?) {
         search(str: searchBar?.text ?? "", filterList: typesCollectionViewCOntroller?.getList() ?? [], params: searchingParametr)
         setupViewVisibility()
     }

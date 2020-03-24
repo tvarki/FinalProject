@@ -290,7 +290,8 @@ extension UIViewController {
 }
 
 extension MonsterViewController: FilterTyped {
-    func tap(type _: String) {
+    func tap(type: String?) {
+        guard type != nil else { return }
         search(str: searchBar?.text ?? "", filterList: typesCollectionViewCOntroller?.getList() ?? [], params: searchingParametr)
         setupViewVisibility()
     }

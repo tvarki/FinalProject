@@ -8,14 +8,9 @@
 
 import Foundation
 
-protocol ModelUpdating: AnyObject {
-    func updateModel()
-    func showError(error: String)
-}
-
 final class MonsterService {
     let requestService = NetRequestsService()
-    private var coreMonsterModel = CoreMonsterModel()
+    private var coreMonsterModel = MonsterServiceModel()
 
     init() {}
 

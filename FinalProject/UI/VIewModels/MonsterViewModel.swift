@@ -9,27 +9,25 @@ import Foundation
 
 class MonsterViewModel {
     private var isFavorite = false
-
     private var monsterService = MonsterService()
-
     private var monsterArray: [MonsterItem] = []
     private var searchMonsterArray: [MonsterItem] = []
-
     private var favoriteArray: [MonsterItem] = []
     private var searchFavoriteArray: [MonsterItem] = []
-
     private var monsterType: [String] = []
-
     private var emParams: EnumMonsterParametrs = .challenge_rating
-
     private var searchString: String = ""
     private var searchFilterArray: [String] = []
-
     weak var delegate: ModelUpdating?
 
     init() {
         monsterService.start(
-            completion: comp, fail: fail
+            completion: { [weak self] items in
+                self?.comp(array: items)
+            },
+            fail: { [weak self] error in
+                self?.fail(error: error)
+            }
         )
     }
 
@@ -138,7 +136,6 @@ class MonsterViewModel {
     }
 
     func setFaforite(forIndex: Int, value: Bool) {
-        //        print("Function: \(#function), line: \(#line)")
         let object: MonsterItem
         if !isFavorite {
             object = monsterArray[forIndex]
@@ -148,7 +145,6 @@ class MonsterViewModel {
     }
 
     func getAllPosts() -> [MonsterItem] {
-        //        print("Function: \(#function), line: \(#line)")
         if !isFavorite {
             return monsterArray
         } else { return favoriteArray }
@@ -161,7 +157,6 @@ class MonsterViewModel {
         var tmpArray: [MonsterItem] = []
 
         allMonsterArray.forEach { monster in
-//            if monster.name.lowercased().contains(str.lowercased()) || str == "" {
             if tnp(monster: monster, str: str, type: emParams) || str == "" {
                 if filterList.contains(monster.type.lowercased().firstUppercased) || filterList.count == 0 {
                     tmpArray.append(monster)
@@ -187,7 +182,6 @@ class MonsterViewModel {
     }
 
     func searchChanged(str: String, filterList: [String], params _: EnumMonsterParametrs) {
-        //        print("Function: \(#function), line: \(#line) monsterArray.count \(monsterArray.count)")
         if !isFavorite {
             fillSearchArray(str: str, filterList: filterList, allMonsterArray: monsterArray, array: &searchMonsterArray)
 
