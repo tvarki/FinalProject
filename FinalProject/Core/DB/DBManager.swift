@@ -18,7 +18,6 @@ protocol TableViewChangesDelegate: AnyObject {
 class DBManager {
     private var database: Realm?
     var notificationToken: NotificationToken?
-    private let condition = NSCondition()
     private let lck = NSLock()
 
     init() {
@@ -86,6 +85,7 @@ class DBManager {
 
     func changeData<P: MyDBObject>(object: P, type: P.Type) {
         guard let database = try? Realm() else { return }
+        lck.lock()
         let item = database.objects(type).filter("name = %@", object.name).first
         if item != nil {
             try? database.write {
@@ -93,6 +93,7 @@ class DBManager {
                 return
             }
         }
+        lck.unlock()
     }
 
     // MARK: - Delete All Data Base

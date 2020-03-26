@@ -4,9 +4,9 @@ PODS:
   - Realm/Headers (4.3.2)
   - RealmSwift (4.3.2):
     - Realm (= 4.3.2)
-  - SwiftFormat (0.44.4):
-    - SwiftFormat/Core (= 0.44.4)
-  - SwiftFormat/Core (0.44.4)
+  - SwiftFormat (0.44.6):
+    - SwiftFormat/Core (= 0.44.6)
+  - SwiftFormat/Core (0.44.6)
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
@@ -25,9 +25,9 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
-  SwiftFormat: 8b3c6b69454305a61c221355095f62dacc0811bf
+  SwiftFormat: 226f259067268a452772fc2bd635bbcecb5ecb09
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 280f146b926db92e584fd3f41fe1e96054ff17f0
+PODFILE CHECKSUM: 5f9e87bca798051c14ce9b70aef9afc8a91db802
 
 COCOAPODS: 1.9.0
